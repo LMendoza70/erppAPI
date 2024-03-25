@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="boletaRecibos" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="0" rightMargin="20" topMargin="0" bottomMargin="0" uuid="89e0e2cb-405f-47a2-a5ae-2a228b596f0f">
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="folio" class="java.lang.Integer"/>
+	<field name="folioFusion" class="java.lang.String"/>
+	<field name="leyendaFolio" class="java.lang.String"/>
+	<field name="noFolioFutuReg" class="java.lang.String"/>
+	<field name="noFolioAux" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="14" width="244" height="13" uuid="3b1cae99-449d-449b-b238-2dbf8423c6fa">
+					<printWhenExpression><![CDATA[new Boolean($F{folio}!=0)]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{leyendaFolio}+" " + $F{folio}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="ElementGroupHeight" x="0" y="13" width="146" height="14" uuid="3acb6952-02c7-4aad-8e61-9ab9f4d2443f">
+					<printWhenExpression><![CDATA[new Boolean($F{folioFusion}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{folioFusion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="245" height="14" uuid="281c330d-9b95-46f4-8ea2-6b37487d4ab4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[new Boolean($F{noFolioFutuReg}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial Narrow" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FOLIO UNICO REAL ELECTRONICO   " + $F{noFolioFutuReg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="245" y="0" width="122" height="14" uuid="311897b9-2eb4-4526-a28c-044127cba0be">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[new Boolean($F{noFolioAux}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial Narrow" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" AUXILIAR-0" + $F{noFolioAux}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

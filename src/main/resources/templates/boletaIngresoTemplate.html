@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body style="font-size:14.0pt;font-family:'Arial Narrow','sans-serif'">
+
+<div th:replace="fragments/header :: header"></div>
+
+
+<p>Apreciable <span th:text="${nombre}"> </span> <span th:text="${paterno}"></span></p>
+
+<p>Por medio de este conducto, le hacemos llegar la Boleta de Ingreso del trámite que inició en el Instituto Catastral y Registral del Estado de Sonora (ICRESON), con la que podrá dar seguimiento y recoger la respuesta a su solicitud.</p>
+
+<p style="text-align:justify">Boleta de Ingreso, con número de trámite <span th:text="${consecutivo}"></span>, de fecha  <span th:text="${fecha}"></span>.</p>
+
+<p> Si usted no realizó el trámite ante el Instituto, favor de notificarlo al correo <b><strong>jnaranjo@icreson.gob.mx</strong></b></p>
+
+<p style="text-align:justify">ATENTAMENTE.</p>
+<p style="text-align:justify">Dirección General de Servicios Registrales.</p>
+
+    
+<footer>
+        <div th:replace="fragments/footer :: footer"></div>
+</footer>
+</body>
+</html>

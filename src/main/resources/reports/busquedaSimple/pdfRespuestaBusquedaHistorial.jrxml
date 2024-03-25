@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="888ae8d1-f103-489e-9498-a94fd150cc15">
+	<property name="ireport.zoom" value="1.331000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="nombrecito"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<subDataset name="Empty Dataset1" uuid="a9d8aedd-f30f-4b69-8e48-5631323ef46b"/>
+	<scriptlet name="formatFecha" class="net.sf.jasperreports.engine.JRDefaultScriptlet"/>
+	<parameter name="path" class="java.lang.String">
+		<defaultValueExpression><![CDATA["C:\\Dev\\hermes\\erpp\\target\\www\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="rutaReportes" class="java.lang.String"/>
+	<parameter name="imgPath" class="java.lang.String"/>
+	<parameter name="QR_BASE_URI" class="java.lang.String"/>
+	<parameter name="marcaDeAgua" class="java.lang.String"/>
+	<field name="referencia" class="java.lang.String"/>
+	<field name="numPrelacion" class="java.lang.Integer"/>
+	<field name="solicitud" class="java.lang.String"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="hora" class="java.lang.String"/>
+	<field name="tipoBusqueda" class="java.lang.String"/>
+	<field name="foliosRegistrales" class="java.util.List"/>
+	<field name="datosLibros" class="java.util.List"/>
+	<field name="historial" class="java.lang.String"/>
+	<field name="firmaBoleta" class="java.lang.String"/>
+	<field name="reviso" class="java.lang.String"/>
+	<field name="autorizo" class="java.lang.String"/>
+	<field name="firmaBusqueda" class="java.lang.String"/>
+	<field name="datosPredio" class="java.lang.String"/>
+	<field name="datosPFM" class="java.lang.String"/>
+	<field name="resultadoCount" class="java.lang.Integer"/>
+	<field name="ubicacion" class="java.lang.String"/>
+	<field name="noOficio" class="java.lang.String"/>
+	<field name="fechaOficio" class="java.lang.String"/>
+	<field name="anioInicial" class="java.lang.String"/>
+	<field name="anioFinal" class="java.lang.String"/>
+	<field name="oficina" class="java.lang.String"/>
+	<field name="colindancias" class="java.lang.String"/>
+	<field name="noFolio" class="java.lang.String"/>
+	<field name="tipoB" class="java.lang.Integer"/>
+	<variable name="fechaFormateada" class="java.lang.String"/>
+	<background>
+		<band height="824">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<image scaleImage="RetainShape">
+				<reportElement x="0" y="30" width="587" height="794" uuid="d9e9c49e-51ff-4e4e-a433-1414bc75cc66">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[new Boolean($P{marcaDeAgua}!=null)]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression><![CDATA[$P{marcaDeAgua} + "/consulta.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="76" splitType="Stretch">
+			<staticText>
+				<reportElement x="74" y="11" width="435" height="20" uuid="4814d91f-f871-4e94-953d-13b11ab6ee3f"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESPUESTA DE LA BÚSQUEDA SIMPLE]]></text>
+			</staticText>
+			<image>
+				<reportElement x="520" y="7" width="60" height="60" isPrintWhenDetailOverflows="true" uuid="4b3e3bd1-80f6-43fd-8805-721425026c3a"/>
+				<imageExpression><![CDATA[$P{path} + "/Escudo_Hidalgo.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="7" width="60" height="60" uuid="3afcf350-3406-4ded-93bc-851f68f70af8"/>
+				<imageExpression><![CDATA[$P{path} + "/logo-inf.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="60" y="35" width="460" height="24" uuid="f4a8a79f-f681-4dcb-9cbc-66a617d5c0a6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INSTITUTO DE LA FUNCIÓN REGISTRAL DEL ESTADO DE HIDALGO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="62" y="55" width="456" height="19" uuid="4c22674b-33cb-4dea-939b-af7af13ba199"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["OFICINA REGISTRAL DE "+$F{oficina}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="152">
+			<staticText>
+				<reportElement x="62" y="12" width="85" height="18" uuid="d1d04215-2734-4c27-99a6-ff793f3d813e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[A SOLICITUD DE:
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="33" width="69" height="20" uuid="1dbc7529-7188-4f94-a7dc-07c2a839ab48"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ENTRADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="33" width="58" height="20" uuid="66d66f63-3a65-45c1-879f-251508cd59e2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DE FECHA
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="33" width="35" height="20" uuid="b82b5c32-c448-4c32-8808-2bb24f1a1af2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[A LAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="55" width="264" height="20" uuid="2741b639-5b3c-4b73-94db-ebb4839e253d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SE SOLICITÓ: BÚSQUEDA
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="79" width="424" height="20" uuid="a3559d5c-1b68-481c-ad60-7d9c3f0b7d47"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATOS DE REFERENCIA PARA LA BÚSQUEDA
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="147" y="12" width="339" height="19" uuid="02748896-2354-4197-b6a7-29297415d8c5"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{solicitud}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="33" width="135" height="20" uuid="41e665b8-2a77-40c5-b269-08382ddd7c3a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{numPrelacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="326" y="34" width="64" height="19" uuid="016ab49a-0a40-4199-b423-61d68c4f781f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="33" width="70" height="20" uuid="8aec0c50-c070-44f4-a116-ec5971fa8f2c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{hora}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Opaque" x="62" y="101" width="205" height="43" backcolor="#DEDEDE" uuid="81dde1ce-829a-40ed-b279-cba0b57251b9"/>
+				<box leftPadding="10" rightPadding="5">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoB}!=null && $F{tipoB}!=4? "POR NOMBRE:\r\n"+$F{datosPFM}
+:"POR DENOMINACIÓN:\r\n"+$F{datosPFM}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="267" y="101" width="220" height="43" backcolor="#DEDEDE" uuid="4b77a010-f985-483b-b40c-6ffd7b05abdc"/>
+				<box leftPadding="10" rightPadding="5">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoB}!=null && $F{tipoB}!=4?"POR INMUEBLE:\r\n"+$F{datosPredio}:""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="0" width="520" height="40" uuid="b976ba40-cea7-47f4-8609-ed65e30de9d4"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EN RELACIÓN A SU OFICIO "+$F{noOficio}+" DE FECHA "+$F{fechaOficio}+" INFORMO A USTED QUE SE REALIZÓ UNA MINUCIOSA BÚSQUEDA  DEL AÑO  "+$F{anioInicial}+" AL AÑO "+$F{anioFinal}+" EN LOS LIBROS EXISTENTES EN ESTA OFICINA REGISTRAL DONDE SE ENCONTRÓ:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="19">
+			<printWhenExpression><![CDATA[$F{ubicacion} != null]]></printWhenExpression>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="30" y="1" width="520" height="14" uuid="82d849b5-5246-47f7-9053-0bac391e4706">
+					<printWhenExpression><![CDATA[$F{ubicacion} != null || $F{ubicacion} != ""]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ubicacion}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="21" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{colindancias} != null]]></printWhenExpression>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="30" y="0" width="520" height="18" uuid="c8482446-d7d0-4b12-a557-b8db8b5e3041"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{colindancias}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="30" y="2" width="520" height="38" uuid="5fa77a1a-2e31-406e-91d9-09a2f7cb4010"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DESTACANDO QUE LA BÚSQUEDA DE DATOS SE REALIZÓ EN EL SISTEMA DE INFORMACIÓN DE ESTA INSTITUCIÓN, TOMANDO COMO PUNTO DE PARTIDA LA INFORMACIÓN PROPORCIONADA POR EL SOLICITANTE, QUIEN SERÁ RESPONSABLE DEL USO QUE PUDIERA DARSE AL PRESENTE DOCUMENTO. 
+]]></text>
+			</staticText>
+		</band>
+		<band height="63">
+			<staticText>
+				<reportElement x="30" y="8" width="54" height="20" uuid="2774a289-34a2-4a88-8298-b81a057a5967"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REVISÓ:
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="86" y="9" width="370" height="19" uuid="a6219e31-9433-4c9e-88ab-f96b9cc2eb42"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reviso}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="30" y="35" width="520" height="18" uuid="86213978-888a-4ea4-896f-01a52fd92669"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FIRMA: "+$F{firmaBusqueda}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="59">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="26" y="33" width="520" height="26" uuid="a5ab8b8b-7337-44ee-a165-9573852f0a98"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FIRMA: "+$F{firmaBoleta}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="86" y="7" width="370" height="19" uuid="a85c487e-c9ff-4bf1-b40c-b37b31237af3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{autorizo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="26" y="7" width="58" height="20" uuid="f177165d-805b-47cb-a0a0-b29c49a8eb1a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUTORIZÓ:
+]]></text>
+			</staticText>
+		</band>
+		<band height="63">
+			<componentElement>
+				<reportElement x="7" y="3" width="89" height="58" uuid="8da4afa3-6851-4142-b365-5fdeab37f9fd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<jr:codeExpression><![CDATA[$P{QR_BASE_URI}]]></jr:codeExpression>
+				</jr:QRCode>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="48" splitType="Prevent">
+			<textField>
+				<reportElement x="410" y="12" width="100" height="22" uuid="41ea6cba-a237-45f6-9549-7b1673fa61e5"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hoja " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="510" y="12" width="100" height="22" uuid="231a963c-1ab5-4c1e-9319-2429e5df16e1"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" / " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="612" pageHeight="1008" whenNoDataType="NoDataSection" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="888ae8d1-f103-489e-9498-a94fd150cc15">
+	<property name="ireport.zoom" value="1.331000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<subDataset name="Empty Dataset1" uuid="a9d8aedd-f30f-4b69-8e48-5631323ef46b"/>
+	<scriptlet name="formatFecha" class="net.sf.jasperreports.engine.JRDefaultScriptlet"/>
+	<parameter name="path" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Dev\\hermes\\erpp\\target\\www\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="rutaReportes" class="java.lang.String"/>
+	<parameter name="imgPath" class="java.lang.String"/>
+	<field name="numeroActa" class="java.lang.Long"/>
+	<field name="libro" class="java.lang.Long"/>
+	<field name="nombreTesteador" class="java.lang.String"/>
+	<field name="ciudad" class="java.lang.String"/>
+	<field name="horaNumero" class="java.lang.String"/>
+	<field name="horaLetra" class="java.lang.String"/>
+	<field name="dia" class="java.lang.String"/>
+	<field name="mesLetra" class="java.lang.String"/>
+	<field name="anio" class="java.lang.String"/>
+	<field name="nombreDirector" class="java.lang.String"/>
+	<field name="lugarNacimiento" class="java.lang.String"/>
+	<field name="fechaNacimiento" class="java.lang.String"/>
+	<field name="edad" class="java.lang.Long"/>
+	<field name="estadoCivil" class="java.lang.String"/>
+	<field name="ocupacion" class="java.lang.String"/>
+	<field name="domicilio" class="java.lang.String"/>
+	<field name="folioCredencial" class="java.lang.String"/>
+	<field name="curp" class="java.lang.String"/>
+	<field name="nombreTestigo" class="java.lang.String"/>
+	<field name="lugarNacimientoTestigo" class="java.lang.String"/>
+	<field name="fechaNacTestigo" class="java.lang.String"/>
+	<field name="edoCivilTestigo" class="java.lang.String"/>
+	<field name="ocupacionTestigo" class="java.lang.String"/>
+	<field name="domicilioTestigo" class="java.lang.String"/>
+	<field name="anioConocer" class="java.lang.String"/>
+	<field name="folioCredeTestigo" class="java.lang.String"/>
+	<field name="registradorAsignado" class="java.lang.String"/>
+	<variable name="fechaFormateada" class="java.lang.String"/>
+	<background>
+		<band height="820" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<image scaleImage="Clip">
+				<reportElement x="-17" y="-1" width="587" height="820" uuid="bc3fdb96-dfbe-44c8-9f8f-5dc320e7429e"/>
+				<imageExpression><![CDATA[$P{path} + "/background.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="136" y="30" width="435" height="20" uuid="61db9c34-b445-414e-a397-b96f7942791d"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORMATO DE ACTA DE DEPOSITO DE TESTAMENTO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="80" splitType="Stretch">
+			<rectangle>
+				<reportElement x="180" y="4" width="339" height="65" uuid="34f469e5-d657-4e33-974a-24e8023d3a63"/>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="187" y="10" width="80" height="20" uuid="d8fa73b3-5c5a-4746-bf2d-5b5351bc9fcb"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACTA NÚMERO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="337" y="10" width="38" height="20" uuid="5b2af3e2-3299-42f9-bfe8-de18846ccc36"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LIBRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="409" y="10" width="100" height="20" uuid="7f6ff41c-5dd2-4175-842c-87976d775993"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECCIÓN AUXILIAR.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="187" y="30" width="322" height="20" uuid="866b8bcf-43cf-4688-abe0-b9aef30536fb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[SECCIÓN AUXILIAR DE TESTAMENTOS OLÓGRAFOS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="267" y="10" width="70" height="20" uuid="6d29c866-0da3-4d88-8b9d-1159c25f4231"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{numeroActa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="10" width="34" height="20" uuid="42a8d278-fd97-4b92-bbdd-bc60d1451e1c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{libro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="50" width="278" height="18" uuid="fd1ae90a-6129-4019-ba71-3dffcbf25919"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombreTesteador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="220" y="49" width="10" height="20" uuid="f5ac403d-d555-4968-9429-b6867052100c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C.]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="521">
+			<rectangle>
+				<reportElement x="130" y="10" width="160" height="499" uuid="9fa1ee1d-7281-4ec4-a271-e727f58babe8"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="296" y="10" width="273" height="500" uuid="7ed3b9d9-18a6-4d3c-865f-0b01fd439bb2"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="305" y="24" width="24" height="16" uuid="a0c6198d-66bd-44cc-b016-f1029ef42464"/>
+				<text><![CDATA[En]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="428" y="24" width="52" height="16" uuid="25deab8e-02a5-4ef2-8830-17de790606a1"/>
+				<text><![CDATA[, siendo las ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="42" width="78" height="16" uuid="8e4b2a1e-701d-4838-b6a2-33b5d50b4cef"/>
+				<text><![CDATA[horas del día ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="60" width="19" height="16" uuid="b856baa1-75b9-4e88-a2ce-4e990dd13f44"/>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="443" y="60" width="40" height="16" uuid="01dd69b5-e5a8-4dac-bf3c-6d05d4fcdbd5"/>
+				<text><![CDATA[del año]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="76" width="256" height="64" uuid="33598247-fe51-447f-acc7-fe6c977df036"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Con Fundamento en el artículo 9, de la Ley del Registro Público de la Propiedad y artículo 5, del Reglamento de la Ley del Registro Público de la Propiedad y de conformidad con las facultades que esta me atribuye, ante mí el Licenciado ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="140" width="254" height="16" uuid="dbd1090d-1861-42c2-9f1c-de6319595b2f"/>
+				<text><![CDATA[, Director General, me fueron presentados por el C.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="172" width="202" height="16" uuid="bc9a21ed-8825-4b8d-87dd-ba1d973dbcad"/>
+				<text><![CDATA[, de nacionalidad mexican (o/a), originario de ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="209" width="58" height="16" uuid="2398e2a5-728e-4228-bed5-88f3f72faac1"/>
+				<text><![CDATA[donde nació]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="483" y="209" width="20" height="16" uuid="58bd7380-02c7-4f56-9da8-dfe565f606b0"/>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="244" width="114" height="16" uuid="2352f184-c5bd-4746-956f-e2014ccb678a"/>
+				<text><![CDATA[, con domicilio en la calle ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="306" y="260" width="256" height="16" uuid="9500c2df-ea72-4dbd-843e-72c8f71311c8"/>
+				<text><![CDATA[; quien se identificó con su Credencial de elector con]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="277" width="32" height="16" uuid="fd1f8760-84cf-4fec-a9ff-94755917987b"/>
+				<text><![CDATA[ Folio ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="294" width="256" height="16" uuid="eb22300e-4c7e-475a-b24c-b2793bd66857"/>
+				<text><![CDATA[,  con la Clave Única del Registro de Población ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="443" y="311" width="119" height="16" uuid="982fb14b-8b05-4bc8-88ec-1553a25406bb"/>
+				<text><![CDATA[quien por no ser  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="327" width="258" height="16" uuid="0b3329da-7266-47c8-8c13-4cbbaf92ab3c"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[conocid(o/a), por el suscrito fue identificada por el C.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="358" width="174" height="16" uuid="5dd08258-90c8-4bc7-a249-061264181b95"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[, de nacionalidad mexicana, originario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="390" width="76" height="16" uuid="51776130-222c-4660-b8c1-0a38042fe075"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[, donde nació el ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="426" width="106" height="16" uuid="3638e4d6-9637-4288-9f6e-553e97bfaee7"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[con domicilio en la calle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="444" width="256" height="16" uuid="818cc017-c9c1-4629-b07a-2ec62d715c9c"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[; quien manifiesta que conoce al  testador desde hace]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="461" width="160" height="16" uuid="0d6e2bb3-19f1-46f2-bc55-82d3b6a40231"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[, quien se identifica con credencial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="478" width="86" height="16" uuid="e4459312-a791-49c8-af7b-9bda3a9fee8f"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[de elector Folio]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="329" y="25" width="98" height="14" uuid="1d3a9555-ac65-4637-9cf0-0514c22407ed"/>
+				<textFieldExpression><![CDATA[$F{ciudad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="481" y="26" width="78" height="14" uuid="7b232dd0-623c-4a50-86c4-db4b758ff46d"/>
+				<textFieldExpression><![CDATA[$F{horaNumero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="40" width="174" height="20" uuid="ab9f1b14-f75f-4eb3-8c4f-09b9e489633c"/>
+				<textFieldExpression><![CDATA[$F{horaLetra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="60" width="34" height="16" uuid="6ef61c79-48af-4208-be40-662ea88a1043"/>
+				<textFieldExpression><![CDATA[$F{dia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="361" y="60" width="78" height="16" uuid="7852a76c-41fe-4bed-80f5-4b986e12b72e"/>
+				<textFieldExpression><![CDATA[$F{mesLetra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="483" y="58" width="74" height="18" uuid="4e970ba9-fefb-4458-ab95-e45614188875"/>
+				<textFieldExpression><![CDATA[$F{anio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="126" width="158" height="14" uuid="9452f4b6-feeb-4b4a-9eac-a3e3833aedf3"/>
+				<textFieldExpression><![CDATA[$F{nombreDirector}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="157" width="254" height="14" uuid="def85476-174e-43ae-8c7f-a0f07a72289c"/>
+				<textFieldExpression><![CDATA[$F{nombreTesteador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="189" width="256" height="20" uuid="b4f204ae-b16f-4732-875a-4e6682f68061"/>
+				<textFieldExpression><![CDATA[$F{lugarNacimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="209" width="120" height="15" uuid="7b699ded-eb20-41aa-82ab-f05b7e472f19"/>
+				<textFieldExpression><![CDATA[$F{fechaNacimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="501" y="209" width="62" height="15" uuid="35dc4ed4-4cc6-486f-93db-088d81381796"/>
+				<textFieldExpression><![CDATA[$F{edad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="304" y="225" width="100" height="19" uuid="daeb7cfa-12c5-4447-8290-459b60fa463d"/>
+				<textFieldExpression><![CDATA[$F{estadoCivil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="225" width="156" height="18" uuid="0ccaa0b7-3f15-4669-92dd-1174f2858cda"/>
+				<textFieldExpression><![CDATA[$F{ocupacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="419" y="244" width="144" height="16" uuid="4ccb70aa-c5f6-4d7a-8995-0060c66af34e"/>
+				<textFieldExpression><![CDATA[$F{domicilio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="339" y="277" width="224" height="15" uuid="50488006-14fb-473f-80cf-2e2bb80a2b64"/>
+				<textFieldExpression><![CDATA[$F{folioCredencial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="304" y="310" width="135" height="16" uuid="93284c8f-6e7c-4b42-876c-60a672f2d9fe"/>
+				<textFieldExpression><![CDATA[$F{curp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="343" width="258" height="14" uuid="62f68880-eb31-47b9-9cdf-562bd415ea85"/>
+				<textFieldExpression><![CDATA[$F{nombreTestigo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement x="305" y="376" width="258" height="14" uuid="26f6ce20-e43b-4605-8f6f-eceb5802d6e5"/>
+				<textFieldExpression><![CDATA[$F{lugarNacimientoTestigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="381" y="390" width="182" height="15" uuid="7aae9d18-69e4-46d7-9dd1-5143dc069ad0"/>
+				<textFieldExpression><![CDATA[$F{fechaNacTestigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="406" width="87" height="18" uuid="6cf64aaa-7884-4eec-b9c8-c3e8fe2170dc"/>
+				<textFieldExpression><![CDATA[$F{edoCivilTestigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="406" width="172" height="18" uuid="7c81aa98-23d7-4f36-9fce-855934de444a"/>
+				<textFieldExpression><![CDATA[$F{ocupacionTestigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="427" width="152" height="15" uuid="027c8b97-3a7a-4e59-9f63-1e81804b8434"/>
+				<textFieldExpression><![CDATA[$F{domicilioTestigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="461" width="95" height="15" uuid="ef8fa7fb-3e3b-40a5-863f-f035ac09ef61"/>
+				<textFieldExpression><![CDATA[$F{anioConocer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="479" width="170" height="14" uuid="ec6d7dc6-8a26-42eb-baf0-efcbc853c0d7"/>
+				<textFieldExpression><![CDATA[$F{folioCredeTestigo}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="459">
+			<rectangle>
+				<reportElement x="296" y="10" width="273" height="439" uuid="471ad7c2-4c74-40d3-b38e-85bbda162a7d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="306" y="20" width="252" height="240" uuid="95bf5d2b-5a88-430e-aa5a-867c7b40ed93"/>
+				<textElement textAlignment="Justified">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[y al efecto recibo los sobres original y duplicado que por el citado testador me fueron presentados, los cuales fueron cerrados y protegidos por una tira de cinta diurex que cada uno contiene,  así como lacrados con el sello de esta Dependencia, cumpliéndose con los requisitos previstos en los artículos 2873, 2875, 2876, 2878 y 2880, del Código Civil vigente en el Estado, poniendo las notas solemnes de rigor en los sobres mencionados, que fueron rubricados por el testador en mi presencia, los dos testigos mencionados y el suscrito, manifestándome los testigos que desde hace tiempo conocen al testador, a quién en acto continuo le entregué el sobre que contiene el duplicado de su Testamento Ológrafo, conservando en la caja de seguridad de este Registro el sobre que contiene el Testamento Ológrafo original para los fines legales respectivos, habiéndose cubierto el impuesto por anotación del testamento, según recibo que bajo el documento Número]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="454" y="246" width="100" height="20" uuid="70a50289-e5ac-4594-b65a-d7fdb0002770"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[agrego al Libro ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="306" y="260" width="252" height="72" uuid="b29af2fd-5f6b-4e54-8be9-be11da6d3fd0"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[de la Sección Auxiliar, y habiéndose llenado los requisitos legales de los artículos 54 y 55 de la Ley del Registro Público de la Propiedad, concluyo la presente acta que firma el testador al calce junto con los testigos y estampa ambas huellas digitales en mi unión. Doy Fe.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="400" width="100" height="20" forecolor="#949191" uuid="97d32cf6-1ab1-4ca3-9a32-a9773ef1d2ce"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reviso y Elaboro:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="130" y="10" width="160" height="439" uuid="c0173cde-4d82-4a1b-9f08-0f2220222fe8"/>
+			</rectangle>
+			<textField>
+				<reportElement x="398" y="247" width="56" height="12" uuid="2b62c5e1-49a6-4139-9db0-ae7089f7c572"/>
+				<textFieldExpression><![CDATA[$F{numeroActa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="523" y="246" width="38" height="12" uuid="fc2d19d2-295f-4c4f-9ff2-296643f36387"/>
+				<textFieldExpression><![CDATA[$F{libro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="420" width="255" height="30" uuid="10dbbde4-d183-4f57-aa0d-3a0557935611"/>
+				<textFieldExpression><![CDATA[$F{registradorAsignado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

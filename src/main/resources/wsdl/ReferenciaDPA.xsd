@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://hidalgo.gob.mx/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://hidalgo.gob.mx/">
+
+<xs:element name="Referencia" type="tns:referencia" />
+
+<xs:complexType name="referencia">
+<xs:sequence>
+<xs:element name="estatus" type="xs:string" minOccurs="0" />
+<xs:element name="fecha_pago" type="xs:string" minOccurs="0" />
+<xs:element name="folio_pago" type="xs:string" minOccurs="0" />
+<xs:element name="institucion" type="xs:string" minOccurs="0" />
+<xs:element name="monto_pagado" type="xs:string" minOccurs="0" />
+<xs:element name="referencia_pago" type="xs:string" minOccurs="0" />
+<xs:element name="referencia_siger" type="xs:string" minOccurs="0" />
+<xs:element name="subtramite" type="xs:string" minOccurs="0" />
+<xs:element name="tipo_pago" type="xs:string" minOccurs="0" />
+<xs:element name="tramite" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pagosPrelacionjrxml" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" uuid="145951ff-d88d-4b28-8e99-3175296f1ffd">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="noRecibo" class="java.lang.Integer"/>
+	<field name="monto" class="java.math.BigDecimal"/>
+	<field name="referencia" class="java.lang.String"/>
+	<field name="concepto" class="java.lang.String"/>
+	<field name="fecha" class="java.util.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="62" y="20" width="117" height="10" uuid="fd9a8d78-621c-4706-9070-3010c64b4880"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-20" y="20" width="80" height="10" uuid="48f55c83-8dd5-4d5d-ba3c-984e8d6b0030"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[MONTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-20" y="0" width="80" height="10" uuid="fb353d15-9ec0-4ed8-8238-5ef5f69f0d7c"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[REFERENCIA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="62" y="0" width="117" height="10" uuid="5febac7f-1392-411d-b6d1-1f0c89f23cb6"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referencia}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="35">
+			<textField>
+				<reportElement x="62" y="10" width="117" height="18" uuid="83d67d50-4423-41d0-9b0d-5e7daae3dc4c"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[DATEFORMAT($F{fecha},"dd/MM/YYYY")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-20" y="10" width="80" height="18" uuid="92393d3b-ea5e-4352-b521-69f667956c8f"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[FECHA DE PAGO]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body style="font-size:14.0pt;font-family:'Arial Narrow','sans-serif'">
+
+<div th:replace="fragments/header :: header"></div>
+<br/>
+   
+    <h1>Estimado <span th:text="${nombre}"></span></h1>
+	<p>Te haz inscrito en el padrón de usuarios del <strog>Instituto de la Funci&oacute;n Registral del Estado de Hidalgo</strog>
+	y para completar el registro, es necesario agregar una contraseña. Por favor continue el proceso en la siguiente enlace, el enlace sera valido solamente por <span th:text="${horas}"></span> horas;</p>
+	<p>
+    <a th:href="${url}"><span th:text="${url}"></span></a>
+    </p>
+    <br/><br/><br/>
+  
+    
+<footer>
+        <div th:replace="fragments/footer :: footer"></div>
+</footer>    
+          
+</body>
+</html>

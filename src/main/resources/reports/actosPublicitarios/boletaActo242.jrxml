@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="boletaRecibos" pageWidth="417" pageHeight="500" columnWidth="417" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isFloatColumnFooter="true" uuid="89e0e2cb-405f-47a2-a5ae-2a228b596f0f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="heredero" class="java.lang.String"/>
+	<field name="albacea" class="java.lang.String"/>
+	<field name="testador" class="java.lang.String"/>
+	<field name="tipoDeDocumento" class="java.lang.String"/>
+	<field name="observaciones" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="60" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<rectangle>
+				<reportElement stretchType="ContainerHeight" mode="Transparent" x="0" y="27" width="416" height="33" backcolor="#FFFFFF" uuid="87a22d61-0778-4dbb-9ade-9e4c64047c9a">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="5" width="416" height="19" backcolor="#E3E3E3" uuid="6ca680f3-efe7-41d1-a4da-d06f325d8443"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="5" width="415" height="19" uuid="a7206653-067b-4269-ab7e-f646570d81b6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HEREDERO]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="4" y="29" width="408" height="21" uuid="0297c202-50de-4945-bda7-a2443146906b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{heredero}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="53">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<rectangle>
+				<reportElement x="0" y="0" width="416" height="19" backcolor="#E3E3E3" uuid="d90df9fe-7e30-4461-9072-00a1d0c77583">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="415" height="19" uuid="d0de52e6-39cc-4a1d-9805-2dd3bda5400d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALBACEA]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement stretchType="ContainerHeight" mode="Transparent" x="0" y="22" width="417" height="28" backcolor="#FFFFFF" uuid="942b99a6-c016-4742-94ce-62bb26b33203">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="5" y="25" width="407" height="15" uuid="468d2e16-7d58-46ec-ac5a-ad6a47607445"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{albacea}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="53">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<rectangle>
+				<reportElement stretchType="ContainerHeight" mode="Transparent" x="1" y="24" width="415" height="26" backcolor="#FFFFFF" uuid="d47fed03-bf0e-43d0-92d5-562b1800e754">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="2" width="416" height="19" backcolor="#E3E3E3" uuid="169ed2e1-a753-49e1-877b-9d67bd9cd91e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="2" width="415" height="19" uuid="edd65fbf-263e-474a-b0dc-dc803f7a6aad">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TESTADOR]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="5" y="24" width="407" height="16" uuid="b00da6e4-6d51-41ae-aeeb-b16adc2f4959">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testador}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="62">
+			<rectangle>
+				<reportElement stretchType="ContainerHeight" mode="Transparent" x="1" y="26" width="415" height="34" backcolor="#FFFFFF" uuid="cb8cf793-8102-47fa-8b93-5f0fd48639c4">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="4" width="416" height="19" backcolor="#E3E3E3" uuid="d44de54f-67a3-455b-a585-6c04d46e7d71"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="4" width="415" height="19" uuid="d083054e-6428-4709-8d44-3a0b28e9bbaf">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO DE DOCUMENTO]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="5" y="30" width="407" height="20" uuid="57666d12-1c40-47d9-afe6-973e3624e1be"/>
+				<textFieldExpression><![CDATA[$F{tipoDeDocumento}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="54">
+			<rectangle>
+				<reportElement x="0" y="0" width="416" height="19" backcolor="#E3E3E3" uuid="2809b920-aad1-4ae8-bccd-5bd7e0127c76">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="415" height="19" uuid="b29a76fa-ddb5-43a7-a443-8b11b676cfed">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIONES]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement stretchType="ContainerHeight" mode="Transparent" x="1" y="22" width="415" height="28" backcolor="#FFFFFF" uuid="db547537-5f51-4705-b18b-fa3bd25aeeec">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="4" y="22" width="408" height="18" uuid="9da9131d-070b-4cce-bfff-e2bdbf3e1760"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{observaciones}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

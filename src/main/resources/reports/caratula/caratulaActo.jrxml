@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="612" pageHeight="792" columnWidth="592" leftMargin="0" rightMargin="20" topMargin="20" bottomMargin="20" uuid="888ae8d1-f103-489e-9498-a94fd150cc15">
+	<property name="ireport.zoom" value="1.331000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<parameter name="path" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Dev\\hermes\\erpp\\target\\www\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="rutaReportes" class="java.lang.String"/>
+	<parameter name="valoresDS" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image scaleImage="Clip">
+				<reportElement x="4" y="0" width="587" height="752" uuid="22a1fb40-15f1-444f-9a13-b6cd735813f6"/>
+				<imageExpression><![CDATA[$P{path} + "/background.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="77" splitType="Stretch">
+			<staticText>
+				<reportElement x="140" y="2" width="449" height="57" forecolor="#076970" uuid="ec1cdd79-bea3-4ed6-93d5-50baff3514e4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="22" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Registro Público de la Propiedad y del Comercio]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40">
+			<staticText>
+				<reportElement x="140" y="10" width="110" height="20" uuid="61db9c34-b445-414e-a397-b96f7942791d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CARATULA  ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="46">
+			<componentElement>
+				<reportElement key="" x="100" y="0" width="492" height="44" uuid="93141004-0f0d-4194-9962-f2968b1b8c60">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.table.name" value="tablaVialidad"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="Blank">
+					<datasetRun subDataset="itemVialidad" uuid="03e03e25-6a0a-489d-bcbf-4cd771eaa6c1">
+						<dataSourceExpression><![CDATA[$P{valoresDS}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="300" uuid="5fe53197-a3c7-400a-b132-afca1b70c368">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableHeader style="Table_TH" height="22" rowSpan="1">
+							<box>
+								<pen lineWidth="0.5"/>
+							</box>
+							<staticText>
+								<reportElement style="header" x="0" y="0" width="300" height="22" backcolor="#244787" uuid="fb8d7508-4e28-444b-ba7f-8903b874ca13"/>
+								<box>
+									<pen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font isBold="true"/>
+									<paragraph firstLineIndent="0" leftIndent="4" spacingBefore="0"/>
+								</textElement>
+								<text><![CDATA[Campo	]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="22">
+							<box>
+								<pen lineWidth="0.5"/>
+							</box>
+							<textField isBlankWhenNull="true">
+								<reportElement style="Fuente" x="0" y="0" width="300" height="22" uuid="f7f6f08e-b992-405b-9f5f-d907f14f457b"/>
+								<box>
+									<pen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" isBold="false"/>
+									<paragraph leftIndent="4"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{etiqueta}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="192" uuid="fe5f03a5-dff6-4564-878b-133068beec67">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+						<jr:tableHeader style="Table_TH" height="22" rowSpan="1">
+							<staticText>
+								<reportElement style="header" x="0" y="0" width="192" height="22" uuid="05679841-d8ea-46f4-adc5-bc65244248c0"/>
+								<box>
+									<pen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font isBold="true"/>
+									<paragraph leftIndent="4" spacingBefore="0"/>
+								</textElement>
+								<text><![CDATA[Valor]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="22">
+							<textField isBlankWhenNull="true">
+								<reportElement style="Fuente" x="0" y="0" width="192" height="22" uuid="539ad99f-f4c9-4605-9ca6-4ad01ba540bc"/>
+								<box>
+									<pen lineWidth="0.5"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Arial" isBold="false"/>
+									<paragraph leftIndent="4"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="10" width="492" height="12" uuid="032ea136-6f2b-4d37-8808-c87803b3d820"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[PARA VERIFICAR EL ESTADO DEL TRÁMITE CONSULTAR EN HTTP://RPPC.JALISCO.GOB.MX]]></text>
+			</staticText>
+			<image scaleImage="RetainShape" onErrorType="Blank">
+				<reportElement x="460" y="30" width="132" height="19" uuid="e473e52b-0bef-4da5-96c1-026272adf803">
+					<property name="com.jaspersoft.studio.unit.y" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.x" value="cm"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{path} +"/logo_pie.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

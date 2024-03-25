@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="boletaRecibos" pageWidth="612" pageHeight="792" whenNoDataType="NoPages" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" uuid="89e0e2cb-405f-47a2-a5ae-2a228b596f0f">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="dd" class="java.lang.Double"/>
+	<field name="uv" class="java.lang.Double"/>
+	<field name="tipo" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<columnHeader>
+		<band height="22">
+			<staticText>
+				<reportElement x="-16" y="0" width="150" height="19" uuid="2c557221-d35b-41e7-9ecf-ad6674fc1fdd"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[T I T U L A R]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="34" height="19" uuid="145cfdcb-4992-410b-9564-9a48bac39b96">
+					<printWhenExpression><![CDATA[new Boolean($F{uv}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[% U.V.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="396" y="0" width="34" height="19" uuid="f57bf33f-bb00-4b6b-8127-c7987bc3ede6">
+					<printWhenExpression><![CDATA[new Boolean($F{dd}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[% D.D.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="396" y="-3" width="34" height="13" uuid="3b1cae99-449d-449b-b238-2dbf8423c6fa">
+					<printWhenExpression><![CDATA[new Boolean($F{dd}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{dd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="-3" width="34" height="13" uuid="8783eaad-b70c-4b67-82b2-685ec099c64a">
+					<printWhenExpression><![CDATA[new Boolean($F{uv}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{uv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-16" y="-3" width="412" height="13" isRemoveLineWhenBlank="true" uuid="5f29b7f1-c9ec-43e0-aa30-2e328b385d32"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-16" y="10" width="250" height="13" uuid="c7191f02-d193-4160-b350-f1709963d2b4">
+					<printWhenExpression><![CDATA[new Boolean($F{tipo}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

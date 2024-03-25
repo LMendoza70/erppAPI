@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pdfCotizacion" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8ccfed9b-ce44-49f0-a958-5e5da64247e1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="23"/>
+	<property name="ireport.y" value="355"/>
+	<parameter name="imgPath" class="java.lang.String"/>
+	<parameter name="documentoFundatorio" class="java.lang.String"/>
+	<parameter name="fundamentoJuridico" class="java.lang.String"/>
+	<parameter name="today" class="java.lang.String">
+		<defaultValueExpression><![CDATA[new SimpleDateFormat("dd/MMM/yyyy hh:mm:ss aaa",new Locale("es", "MX")).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="reportsPath" class="java.lang.String"/>
+	<parameter name="cotizadorMensaje" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="clasificacionConceptoNombre" class="java.lang.String"/>
+	<field name="total" class="java.math.BigDecimal"/>
+	<field name="descParametros" class="java.lang.String"/>
+	<field name="detalle" class="java.util.List"/>
+	<field name="servicioCotizadorNombre" class="java.lang.String"/>
+	<variable name="total" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{total}]]></variableExpression>
+	</variable>
+	<background>
+		<band height="920" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<image scaleImage="Clip">
+				<reportElement x="-17" y="-1" width="587" height="921" uuid="0b9c9aa4-3705-48ee-a44a-906c3f6e083a"/>
+				<imageExpression><![CDATA[$P{imgPath} + "/background.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="123" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="20" width="310" height="19" uuid="6fe0ced1-907b-4098-8801-eea20817ec06"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REGISTRO PÚBLICO DE LA PROPIEDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="40" width="310" height="19" uuid="93d441c2-f296-4dd4-9652-ee959f9c63b6"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COTIZACIÓN DE SERVICIOS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="420" y="93" width="124" height="17" uuid="616b3e0e-3c3f-4a66-8c18-fc6f0af5f028"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{today}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="134" y="10" width="410" height="20" uuid="eda2e648-cd62-492e-81b3-db125d8e317f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{servicioCotizadorNombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<rectangle>
+				<reportElement x="131" y="1" width="441" height="30" uuid="95a3a822-f32b-4ad0-93a7-778a6d663d38"/>
+			</rectangle>
+			<line>
+				<reportElement x="499" y="1" width="1" height="30" uuid="d2aa0ac2-0140-4ce9-b652-245680cb63f7"/>
+			</line>
+			<line>
+				<reportElement x="263" y="1" width="1" height="29" uuid="cdde9398-87fa-4b9d-8ed9-a6ef6da9a205"/>
+			</line>
+			<staticText>
+				<reportElement x="146" y="1" width="118" height="30" uuid="c920cb11-7f2c-4485-aa98-518b5c55ba94"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<text><![CDATA[ACTO O SERVICIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="1" width="233" height="30" uuid="6b2600ae-bd06-41a1-a966-9164e76c7f54"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<text><![CDATA[FACTORES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="1" width="70" height="30" uuid="73d22a22-feed-4d0c-ac6f-13b73b5e6776"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<text><![CDATA[SUBTOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="94" splitType="Stretch">
+			<rectangle>
+				<reportElement x="131" y="0" width="440" height="93" uuid="bb98d4dc-ba9d-4713-8164-7d2bf799b0c2"/>
+			</rectangle>
+			<line>
+				<reportElement x="499" y="0" width="1" height="93" uuid="d2d90f97-b0d5-4760-a09b-daec1c3b6d4d"/>
+			</line>
+			<line>
+				<reportElement x="264" y="0" width="1" height="35" uuid="641c0a37-554a-444e-bcdb-29bd62d09642"/>
+			</line>
+			<subreport>
+				<reportElement x="130" y="35" width="369" height="58" uuid="e827759c-d151-4195-9131-e989bbe1db1b"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{detalle})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{reportsPath} +"/cotizador/detalle_cotizador.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="134" y="18" width="119" height="17" uuid="4765d046-e485-4aa9-9b1a-4dac4c818309"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="1" width="233" height="34" uuid="8d25b7e4-fc9a-4c64-9152-c7d11dbd6804"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descParametros}!=null?$F{descParametros}:""]]></textFieldExpression>
+			</textField>
+			<textField pattern="$ #,##0.00">
+				<reportElement x="500" y="1" width="69" height="34" uuid="4f4d693b-978f-4f7c-9188-2da87f2cc757"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="132" y="1" width="119" height="17" uuid="bb65dd71-a7c5-45e2-8828-c84fab1288d2"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clasificacionConceptoNombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="175" splitType="Stretch">
+			<rectangle>
+				<reportElement x="130" y="0" width="440" height="20" uuid="7250aedb-a4f1-4371-b6b7-b7c74441b763"/>
+			</rectangle>
+			<line>
+				<reportElement x="499" y="-1" width="1" height="21" uuid="502da062-3857-4649-89c3-7d4cbf5628bb"/>
+			</line>
+			<staticText>
+				<reportElement x="399" y="0" width="100" height="20" uuid="29f4a0dd-7e45-4a2d-8c6e-053f4565f675"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="500" y="-1" width="70" height="21" uuid="25fc1277-b81b-48eb-b063-d30ff903466e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("$ #,##0.00").format($V{total})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="131" y="74" width="95" height="20" uuid="41a0bb08-f376-4780-905b-9f475cebf6a2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIONES:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="121" width="95" height="20" uuid="7e666b61-9323-4044-a3a2-864fb2c514f6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[FUNDAMENTO JURÍDICO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="226" y="121" width="343" height="54" uuid="edb27468-3798-4718-a79d-55b72231dfdb"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fundamentoJuridico}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="130" y="25" width="441" height="45" uuid="5b8e0e57-992e-4c38-9f44-f60660bff191"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="134" y="28" width="166" height="18" uuid="c3ad5a2b-b460-4302-b296-fb9d55773403"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[DOCUMENTO COTIZADO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="134" y="47" width="431" height="19" uuid="09c6fed2-16a1-43a0-a668-9df88dbd2022"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{documentoFundatorio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="226" y="74" width="343" height="47" uuid="ac7c2436-45d6-416a-945c-33284ba254be"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cotizadorMensaje}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

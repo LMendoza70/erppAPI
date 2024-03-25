@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detalles_cotizador" pageWidth="370" pageHeight="752" columnWidth="370" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="8c71f709-224a-4296-a5f0-f5ae3221be8b">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="clave" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="costo" class="java.math.BigDecimal"/>
+	<field name="cantidad" class="java.lang.Integer"/>
+	<field name="mensaje" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="43" y="1" width="146" height="20" uuid="24ce7741-38ae-4e0d-9027-4bdba89a81e1"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONCEPTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="0" width="49" height="20" uuid="3049229d-c3ef-4d6f-94a8-d3f188b5bdf9"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COSTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="1" width="43" height="20" uuid="6ce99dd0-2033-4b94-b880-37b3fe5f2f1f"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLAVE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="0" width="369" height="1" uuid="8666e681-e4d4-4ea3-84c9-95a266fb7545"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="21" width="369" height="1" uuid="f6bf4439-fc7e-47e9-84d9-aadca402203f"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="189" y="1" width="122" height="20" uuid="3b1a6fed-0d27-4261-a0a9-21942f0bc028"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIONES]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="43" height="17" uuid="074b3110-7191-48f8-93ff-c798de0e0b90"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clave}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="42" y="0" width="147" height="17" uuid="298437a1-99aa-45ae-bea1-65e93ffe4647"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="$ #,##0.00">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="311" y="0" width="49" height="17" uuid="cd203598-0b46-482d-91a8-b78b8216053e"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{costo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="189" y="0" width="122" height="17" uuid="8491ec89-b6a6-4f4b-a075-2b8f2ac624d8"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mensaje}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

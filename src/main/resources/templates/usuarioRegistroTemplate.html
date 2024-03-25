@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body style="font-size:14.0pt;font-family:'Arial Narrow','sans-serif'">
+
+<div th:replace="fragments/header :: header"></div>
+<br/>
+
+<p>Estimado Usuario </p>
+<br/>
+<p style="text-align:justify">Hemos recibido una solicitud para generar una nueva cuenta de usuario para el sistema eRPP.</p>
+
+<p style="text-align:justify">En el Gobierno de Hidalgo sabemos lo importante que es tu tiempo, por eso una vez concluido este proceso,
+mediante tu usuario podrás acceder a diversos <a href="www.hidalgo.gob.mx">trámites</a> desde la comodidad de tu hogar u oficina, evitando traslados o filas,  
+podrás conocer el <a href="www.hidalgo.gob.mx">estatus de los trámites o servicios solicitados</a> y recibir la respuesta de los 
+mismo mediante tu usuario</p>
+
+<p style="text-align:center;font-size:14.6667px;"><i>Te invitamos a conocer y activar el servicio de </i><a href="www.hidalgo.gob.mx"><i>Reporte Registral</i></a>
+<i>, mediante el cual podrás recibir notificaciones respecto de inmuebles de tu propiedad o interés.</i></p>
+
+<p><b><strong>Si usted realizo la solicitud</strong></b> continúe el proceso <a th:href="${url}">aquí,</a> la liga será válida solamente por <span th:text="${minutos}"></span> minutos.</p>
+
+<p><b><strong>Si usted no realizo la solicitud</strong></b>, proteja su cuenta.</p>
+
+<br/>
+
+<footer>
+        <div th:replace="fragments/footer :: footer"></div>
+</footer>
+</body>
+</html>

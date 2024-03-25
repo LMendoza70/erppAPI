@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="612" pageHeight="1008" whenNoDataType="NoDataSection" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="888ae8d1-f103-489e-9498-a94fd150cc15">
+	<property name="ireport.zoom" value="1.331000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<subDataset name="Empty Dataset1" uuid="a9d8aedd-f30f-4b69-8e48-5631323ef46b"/>
+	<scriptlet name="formatFecha" class="net.sf.jasperreports.engine.JRDefaultScriptlet"/>
+	<parameter name="path" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Dev\\hermes\\erpp\\target\\www\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="rutaReportes" class="java.lang.String"/>
+	<parameter name="imgPath" class="java.lang.String"/>
+	<field name="solicitante" class="java.lang.String"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="numPrelacion" class="java.lang.String"/>
+	<field name="fechaRecepcion" class="java.lang.String"/>
+	<field name="fechaCertificado" class="java.lang.String"/>
+	<field name="fechaPlanoCartografico" class="java.lang.String"/>
+	<field name="nombreDirector" class="java.lang.String"/>
+	<field name="municipio" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="superficie" class="java.lang.String"/>
+	<field name="alNorte" class="java.lang.String"/>
+	<field name="alSur" class="java.lang.String"/>
+	<field name="alOriente" class="java.lang.String"/>
+	<field name="alPoniente" class="java.lang.String"/>
+	<field name="favorDe" class="java.lang.String"/>
+	<field name="propietarios" class="java.lang.String"/>
+	<field name="numSolicitud" class="java.lang.String"/>
+	<field name="numLibro" class="java.lang.String"/>
+	<field name="ciudad" class="java.lang.String"/>
+	<field name="horasNumero" class="java.lang.String"/>
+	<field name="horaLetra" class="java.lang.String"/>
+	<field name="dia" class="java.lang.String"/>
+	<field name="mesLetra" class="java.lang.String"/>
+	<field name="anio" class="java.lang.String"/>
+	<field name="numRecibo" class="java.lang.String"/>
+	<field name="montoNumero" class="java.lang.String"/>
+	<field name="montoLetra" class="java.lang.String"/>
+	<field name="quienBusco" class="java.lang.String"/>
+	<field name="abogadoAsignado" class="java.lang.String"/>
+	<field name="coordinadorAcargo" class="java.lang.String"/>
+	<variable name="fechaFormateada" class="java.lang.String"/>
+	<title>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement x="62" y="0" width="449" height="20" uuid="61db9c34-b445-414e-a397-b96f7942791d"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CERTIFICADO DE NO INSCRIPCIÓN2]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="1" y="0" width="60" height="60" uuid="95ccfd36-14fb-4bb4-bce8-1a659b294124"/>
+				<imageExpression><![CDATA[$P{path} + "/logo-inf.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="61" y="20" width="450" height="30" uuid="f41f5670-a5e1-4749-9322-3a99ec1d8025"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INSTITUTO DE LA FUNCION REGISTRAL]]></text>
+			</staticText>
+			<image>
+				<reportElement x="511" y="0" width="60" height="60" uuid="d266760b-0a51-4612-ad17-2cdcea2710a6"/>
+				<imageExpression><![CDATA[$P{path} + "/Escudo_Hidalgo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="380" splitType="Stretch">
+			<staticText>
+				<reportElement x="62" y="0" width="449" height="88" uuid="d1d04215-2734-4c27-99a6-ff793f3d813e"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[CON FUNDAMENTO EN LOS ARTÍCULOS 2, 5, FRACCIÓN IX, 23, FRACCIÓN II, INCISO A), 24, DE LA LEY DEL REGISTRO PÚBLICO DE LA PROPIEDAD DEL ESTADO DE JALISCO, ASÍ COMO LOS DIVERSOS 3, FRACCIÓN I, 5, FRACCIÓN I, 11, FRACCIÓN VI, 37 DEL REGLAMENTO DE LA LEY DEL REGISTRO PÚBLICO DE LA PROPIEDAD DEL ESTADO DE JALISCO, UNA VEZ SATISFECHOS LOS REQUISITOS DEL ARTÍCULO 40 DEL ÚLTIMO ORDENAMIENTO LEGAL CITADO, EL SUSCRITO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="63" y="96" width="450" height="54" uuid="d8fa73b3-5c5a-4746-bf2d-5b5351bc9fcb"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[de DIRECTOR DEL ÁREA DE CERTIFICACIONES Y GRAVÁMENES DEL REGISTRO PUBLICO DE LA PROPIEDAD Y DE COMERCIO, HAGO CONSTAR Y CERTIFICO QUE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="62" y="150" width="449" height="18" uuid="e88b867a-944d-4fa0-a75a-557def468fbd"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[A SOLICITUD POR ESCRITO PRESENTADA ANTE ÉSTA INSTITUCIÓN REGISTRAL, POR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="307" y="170" width="63" height="18" uuid="325f9347-0010-4056-ae87-0c633e92d469"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[de fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="62" y="188" width="198" height="18" uuid="5b3c22bb-333f-45c4-a9d2-31fbdff8d641"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[CORRESPONDIÉNDOLE LA ENTRADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="191" width="184" height="18" uuid="9ca6ff2f-6cd0-4dc4-8fb6-9d3d1e83fbc3"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[RECIBIDA EN ESTA DEPENDENCIA EL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="210" width="302" height="19" uuid="06d06e2a-e293-44d7-973d-d23d9920a7e2"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DEL AÑO EN CURSO TENIENDO A LA VISTA EL CERTIFICADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="229" width="274" height="22" uuid="114cb6c4-0a74-4911-9b89-485556056014"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[CATASTRAL CON HISTORIA, DE LA CUENTA 99-2222 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="229" width="74" height="22" uuid="47666bd6-faa5-46ab-9087-0797a65fc111"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[de fecha ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="59" y="255" width="280" height="20" uuid="5e973222-ae46-4cdc-91fa-cf3e8a190a33"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[, Y EL PLANO CARTOGRÁFICO CERTIFICADO, DE FECHA  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="277" width="162" height="14" uuid="a44396fe-a7e6-4f6c-9d5d-3236e49ab783"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[, AMBOS FIRMADO POR EL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="294" width="257" height="14" uuid="df9c6957-78ed-4597-a168-067ed7abbe47"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[, DIRECTOR DE CATASTRO MUNICIPAL DE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="310" width="459" height="60" uuid="87a0bac6-4c99-41e9-991a-b8c70bbc969a"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[SE REALIZÓ LA BÚSQUEDA EN EL SISTEMA DE INFORMACIÓN DE ÉSTA DEPENDENCIA A FIN DE VERIFICAR SI OBRA O NO CONSTANCIA DE REGISTRO DEL INMUEBLE QUE SE DESCRIBE A CONTINUACIÓN:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="287" y="80" width="229" height="16" uuid="aac5805e-b9a6-4905-af2d-072ad9e1762b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombreDirector}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="63" y="170" width="258" height="18" uuid="576ab680-7128-49ec-8944-615ba475746f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{solicitante}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="61" y="208" width="149" height="18" uuid="b9935a7b-6d9f-478e-abb0-df0e740a4445"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fechaRecepcion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="255" y="189" width="79" height="16" uuid="d419b6cf-1e87-4668-b502-225bce4c7c65"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{numPrelacion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="412" y="229" width="140" height="19" uuid="db2a49ee-518b-4b6e-993c-6222112031e1"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fechaCertificado}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="358" y="170" width="149" height="18" uuid="9e879d3a-9a66-4baa-bf29-63dfd4d51cd4"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="323" y="255" width="198" height="20" uuid="4f0a981f-270a-4eb7-9efb-b04153bf75f6"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fechaPlanoCartografico}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="220" y="276" width="315" height="16" uuid="502fc3d2-073f-4084-b5b3-44777884ef48"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombreDirector}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="317" y="294" width="223" height="15" uuid="1ea951c1-bb15-4796-a4c5-feceb2553cbf"/>
+				<textFieldExpression><![CDATA[$F{municipio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="193">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="60" y="4" width="197" height="16" uuid="6667a66c-f0fd-42b6-b53f-d489e9d4f3a8"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[PREDIO BALDIO UBICADO EN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="59" y="50" width="178" height="16" uuid="7f2c6348-ab15-48b8-ac51-c6a48cac8819"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[CON UNA SUPERFICIE DE ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="60" y="80" width="169" height="16" uuid="e2911630-7802-4459-b599-45a4ef475c17"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[MEDIDAS Y LINDEROS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="61" y="100" width="96" height="16" uuid="9aa90c32-ef92-44a5-9df6-2520c653ba44"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[AL NORTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="61" y="121" width="96" height="16" uuid="78d539b5-5e1d-4960-873d-27c874cf198b"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[AL SUR :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="62" y="143" width="102" height="16" uuid="fdeda409-09e7-492b-a7f3-e0f6b2181f8a"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[AL ORIENTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="65" y="167" width="113" height="16" uuid="51b2a1b3-1e9c-4a22-b29e-533ac893703f"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[AL PONIENTE:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="59" y="20" width="458" height="30" uuid="92b01c60-7b0c-438d-8a87-3be34fd5a792"/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="214" y="50" width="304" height="20" uuid="b6cd958a-56df-49aa-a77f-8974945ccad8"/>
+				<textFieldExpression><![CDATA[$F{superficie}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="155" y="100" width="364" height="16" uuid="d618faae-4696-44a0-b0de-0a14fcce7384"/>
+				<textFieldExpression><![CDATA[$F{alNorte}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="154" y="122" width="366" height="16" uuid="5e2a1218-21ff-44c9-b682-252ac0fa9feb"/>
+				<textFieldExpression><![CDATA[$F{alSur}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="154" y="143" width="366" height="16" uuid="cd74051d-d1d4-48db-a860-95713d75c3ee"/>
+				<textFieldExpression><![CDATA[$F{alOriente}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="156" y="167" width="363" height="16" uuid="f02875eb-5905-4e6b-8391-5465eef3d1ad"/>
+				<textFieldExpression><![CDATA[$F{alPoniente}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="545">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="61" y="2" width="458" height="30" uuid="884d56af-063b-4706-9645-a791d1317a27"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[EN RELACIÓN A LO CUAL ÉSTA AUTORIDAD NO ENCONTRÓ REGISTRO DE LA PROPIEDAD EN MENCION A FAVOR DE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="52" width="457" height="30" uuid="2828f189-bd94-4e71-bfa0-9a5ed2daee9e"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[QUIENES FIGURAN COMO PROPIETARIOS EN LA CUENTA CATASTRAL YA REFERIDA, NI DE LOS ANTERIORES PROPIETARIOS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="100" width="457" height="30" uuid="5b8ff787-42d2-4816-bedf-998067d2c485"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[QUE DEL MISMO SE DESPRENDEN, NI DE PERSONA ALGUNA, ELLO DEL PERIODO COMPRENDIDO DEL AÑO 1936 A LA FECHA.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="130" width="456" height="116" uuid="1e07311f-99a3-421f-9ce6-1c58730ca60a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ES DE RESALTAR QUE ESTA INSTITUCIÓN CUENTA CON REGISTROS DE ÍNDICES, TARJETAS KÁRDEX Y FOLIOS REGISTRALES PARA BÚSQUEDA DE DOCUMENTOS Y ANTECEDENTES, POR CUANTO HACE A LOS AÑOS 1883 A 1979, DE 1986 A 1988, 2001 A LA FECHA. POR LO QUE  HABIÉNDOSE REALIZADO LA BÚSQUEDA EN LA TOTALIDAD DE LOS REGISTROS DE ÍNDICES, TARJETAS KÁRDEX Y FOLIOS REGISTRALES PARA BÚSQUEDA DE DOCUMENTOS Y ANTECEDENTES CON QUE CUENTA ÉSTA AUTORIDAD, NO SE LOCALIZARON LOS DATOS DE REGISTRO TAL COMO SE SEÑALA EN PÁRRAFOS QUE ANTECEDE.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="254" width="456" height="74" uuid="8fad9840-766c-4ea8-b68a-32270376a53f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DESTACANDO QUE LA BÚSQUEDA DE DATOS SE REALIZÓ EN EL SISTEMA DE INFORMACIÓN DE ÉSTA INSTITUCIÓN, TOMANDO COMO PUNTO DE PARTIDA LA INFORMACIÓN PROPORCIONADA POR EL SOLICITANTE, QUIEN SERÁ RESPONSABLE DEL MAL USO QUE PUDIERA DARSE AL PRESENTE DOCUMENTO EN CASO DE QUE DICHA INFORMACIÓN SEA IMPRECISA Y/O INCORRECTA.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="349" width="350" height="16" uuid="8d89252e-94a5-4b8c-a8fa-fd2c47cefe7e"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[LA SOLICITUD EN COMENTO QUEDO ARCHIVADA BAJO EL NÚMERO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="486" y="350" width="70" height="16" uuid="c4ba4f3a-8807-49ed-b416-058d46663673"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DEL LIBRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="372" width="394" height="20" uuid="6f4261fe-00a7-4ebd-a78c-bc22c7101c32"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DE SOLICITUDES Y CERTIFICADO DE INSCRIPCIÓN Y NO INSCRIPCIÓN DE LA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="391" width="452" height="16" uuid="9f51d922-7fc1-4745-a578-72a6dae9b450"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[OFICINA DEL REGISTRO PÚBLICO DE LA PROPIEDAD DE HIDALGO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="419" width="242" height="16" uuid="0086b0cf-9202-4881-ac35-3321da4e886e"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[EL PRESENTE SE EXPIDE EN LA CIUDAD DE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="419" width="64" height="16" uuid="819ea7d4-8547-400b-ba17-de3fa2e4b153"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[A LAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="437" width="40" height="22" uuid="d1a0cea9-fbee-4217-a5ab-23e7edcf24f0"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[del ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="437" width="40" height="22" uuid="56f487ab-6519-4578-91d1-9e5f4bb57b0d"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="437" width="64" height="22" uuid="84ece9d3-ac51-4548-a5b0-4942b3cd9c05"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[de año]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="464" width="446" height="30" uuid="ad105f2b-182f-4236-972d-5a18b0bfa8eb"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[LOS DERECHOS PARA LA EXPEDICIÓN DEL PRESENTE CERTIFICADO FUERON CUBIERTOS CON EL (LOS) RECIBO(S):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="317" y="494" width="148" height="14" uuid="d1581318-94df-42ee-b7d9-2a18d6bd765c"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[por un monto total de ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="61" y="32" width="455" height="20" uuid="00546b70-c06d-4111-8306-0cd3f76aad98"/>
+				<textFieldExpression><![CDATA[$F{favorDe}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="61" y="82" width="457" height="18" uuid="e7437cc8-6f80-4efa-9362-9915ae89ad5d"/>
+				<textFieldExpression><![CDATA[$F{propietarios}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="410" y="350" width="76" height="14" uuid="c76f63b7-6373-4a56-a2ea-87ef28bde66d"/>
+				<textFieldExpression><![CDATA[$F{numSolicitud}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="63" y="373" width="80" height="18" uuid="f760a0fa-4c38-41ae-acfd-8b486edb94d7"/>
+				<textFieldExpression><![CDATA[$F{numLibro}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="60" y="520" width="112" height="22" uuid="30f6280c-7745-46fe-aebd-874e3aaa5375"/>
+				<textFieldExpression><![CDATA[$F{montoNumero}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="151" y="520" width="362" height="22" uuid="2f0386fe-ed03-4457-930e-81f9b079e69f"/>
+				<textFieldExpression><![CDATA[$F{montoLetra}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="494" width="146" height="14" uuid="1bb00ee0-167e-4c68-8581-30d1b0b7fb91"/>
+				<textFieldExpression><![CDATA[$F{numRecibo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="305" y="418" width="86" height="18" uuid="af3a7675-6d3e-4f86-92fb-4b8d983f3fd4"/>
+				<textFieldExpression><![CDATA[$F{ciudad}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="446" y="419" width="122" height="16" uuid="da4c2d71-1757-4753-a13c-229ceed56e4c"/>
+				<textFieldExpression><![CDATA[$F{horasNumero}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="65" y="436" width="144" height="20" uuid="514f4d35-fe3f-4d50-80d0-92e3b5c62d3b"/>
+				<textFieldExpression><![CDATA[$F{horaLetra}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="208" y="438" width="70" height="20" uuid="cffd018d-e1f5-469e-a232-8f0b8e391c51"/>
+				<textFieldExpression><![CDATA[$F{dia}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="275" y="437" width="122" height="18" uuid="acd48f32-845d-4e20-a75a-6c30d98d7ea4"/>
+				<textFieldExpression><![CDATA[$F{mesLetra}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="420" y="438" width="96" height="18" uuid="eb4a787b-d771-4472-8538-eb033c2d603a"/>
+				<textFieldExpression><![CDATA[$F{anio}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="261">
+			<staticText>
+				<reportElement x="63" y="80" width="422" height="50" uuid="97477fc8-fa66-4b40-8a08-b6c72e66e2e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[
+DIRECTOR DEL ÁREA DE CERTIFICACIONES y GRAVÁMENES DEL REGISTRO PUBLICO DE LA PROPIEDAD Y DE COMERCIO
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="190" width="151" height="16" uuid="d77e934c-682e-448b-95ba-7a5d9f2032c3"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[BÚSQUEDA REALIZADA POR:  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="206" width="149" height="16" uuid="fcf0f316-c000-4c5c-9c22-2e8c44ab9533"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[ELABORÓ:  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="222" width="149" height="16" uuid="31bf6177-d2e7-4bb4-8db9-a8037b6ea3e0"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[VO, BO:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="217" y="190" width="326" height="16" uuid="e5e45d69-d813-4629-819f-8f5e9e63c6f8"/>
+				<textFieldExpression><![CDATA[$F{quienBusco}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="217" y="206" width="326" height="16" uuid="8e4b8c77-fe20-45c9-a725-01a1d7396eb6"/>
+				<textFieldExpression><![CDATA[$F{abogadoAsignado}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="217" y="222" width="326" height="18" uuid="cd5eec82-e5a3-4f81-8c22-db0d84bf1ddd"/>
+				<textFieldExpression><![CDATA[$F{coordinadorAcargo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="63" y="40" width="422" height="30" uuid="ea0800c1-88fb-4cac-acaf-9271a3e733ce"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreDirector}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

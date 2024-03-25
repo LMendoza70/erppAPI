@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pdfDatosReferenciaBusqueda" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cf79b42f-2d1f-4629-9a7f-b3716d0e29ca">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="datosReferencia" class="java.lang.String"/>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<rectangle>
+				<reportElement positionType="FixRelativeToBottom" stretchType="ElementGroupBottom" x="2" y="0" width="550" height="27" uuid="c707279e-9791-41cf-a34f-2863d0927e5a"/>
+			</rectangle>
+			<textField>
+				<reportElement x="6" y="5" width="540" height="18" uuid="3f28d8ce-d71e-4609-9c21-0456a3861d9e"/>
+				<textFieldExpression><![CDATA[$F{datosReferencia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

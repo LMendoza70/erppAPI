@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="boletaDenegadas" pageWidth="467" pageHeight="792" columnWidth="427" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c5ad1251-4769-4b08-93a9-c415f6b7882b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="motivo" class="java.lang.String"/>
+	<field name="observacion" class="java.lang.String"/>
+	<field name="fechaDeNegacion" class="java.lang.String"/>
+	<field name="entrada" class="java.lang.String"/>
+	<field name="folio" class="java.lang.String"/>
+	<field name="fechaTermino" class="java.lang.String"/>
+	<field name="fundamento" class="java.lang.String"/>
+	<detail>
+		<band height="82" splitType="Stretch">
+			<staticText>
+				<reportElement x="-15" y="-6" width="86" height="19" uuid="900eafb8-4962-4c75-842f-2141c0086f65"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ENTRADA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="71" y="-7" width="1" height="41" uuid="ec7c9a38-36f2-44c7-8ca2-397dee287c15"/>
+			</line>
+			<line>
+				<reportElement x="-15" y="-7" width="457" height="1" uuid="a218d97a-f422-4bb2-a566-b26e836da267"/>
+			</line>
+			<staticText>
+				<reportElement x="72" y="-7" width="159" height="20" uuid="30ccbc56-769a-4119-ae0e-b51d5d088d90"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DENEGACIÓN]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-16" y="13" width="354" height="1" uuid="814a5aa9-d5ba-4058-8666-e286ef418aa2"/>
+			</line>
+			<line>
+				<reportElement x="442" y="-7" width="1" height="88" uuid="696632bd-8671-45dc-90a8-18aa89cf25eb"/>
+			</line>
+			<line>
+				<reportElement x="-16" y="34" width="459" height="1" uuid="8e38d380-2331-4eba-a5d3-83049f5cdd01"/>
+			</line>
+			<staticText>
+				<reportElement x="-15" y="35" width="458" height="15" uuid="eea9a2ff-3494-4d72-9120-f7bf92b11331"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MOTIVO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="231" y="-6" width="1" height="41" uuid="e2dd852a-6d27-4dd0-94fd-24bfd9742054"/>
+			</line>
+			<line>
+				<reportElement x="-15" y="81" width="458" height="1" uuid="cc2ad541-302b-4438-aaa7-c368ab6d974d"/>
+			</line>
+			<line>
+				<reportElement x="-16" y="-7" width="1" height="89" uuid="3a950d9e-3940-4af7-ae1f-614256a52120"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="-13" y="51" width="452" height="30" uuid="be22f548-3a28-4248-a41c-1289fa811b67"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{motivo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="14" width="160" height="20" uuid="403d00c9-f889-4db1-99a0-4829932f2fbd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fechaDeNegacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-15" y="13" width="87" height="21" uuid="6fe03ee6-f897-4b65-9120-8ba58e8d33fd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{entrada}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-15" y="50" width="458" height="1" uuid="d5448820-89bf-4127-b32d-86af7755d539"/>
+			</line>
+			<line>
+				<reportElement x="338" y="-7" width="1" height="41" uuid="d4d55db3-d983-4fb4-a7fb-e6422e28b366"/>
+			</line>
+			<staticText>
+				<reportElement x="231" y="-7" width="101" height="20" uuid="8e8d50ad-a3bf-4d70-a2ac-0a4e3dbea016"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FOLIO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="232" y="13" width="101" height="20" uuid="d110d71a-0989-4c7e-b0ab-7f8f0a2a21b5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{folio}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="39">
+			<staticText>
+				<reportElement x="-16" y="0" width="459" height="19" uuid="2c21c29e-76a5-4f75-82ce-af53b9089e8a"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FUNDAMENTO]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="-16" y="19" width="459" height="20" isPrintWhenDetailOverflows="true" uuid="04ed42bd-d6d2-4c53-a6e5-2b1102bb0de4"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="7"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fundamento}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="58">
+			<staticText>
+				<reportElement x="-16" y="0" width="459" height="19" uuid="be09c8d8-c0f0-427b-8e00-47679037447e"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIONES]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="-16" y="19" width="459" height="30" uuid="567ec7ac-1ea8-4698-81ff-922be8d9d1ac"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font size="7"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{observacion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

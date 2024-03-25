@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body style="font-size:14.0pt;font-family:'Arial Narrow','sans-serif'">
+
+<div th:replace="fragments/header :: header"></div>
+
+
+<p>Apreciable <span th:text="${nombre}"> </span> <span th:text="${paterno}"></span></p>
+
+<p style="text-align:justify">En seguimiento a su tr&aacute;mite Num. <span th:text="${consecutivo}"></span>, ingresado con fecha  <span th:text="${fecha}"></span> al Instituto de la Funci&oacute;n Registral del Estado de Hidalgo, le informamos que su solicitud fue analizada por nuestro personal y suspendida debido a las omisiones que presenta la documentaci&oacute;n ingresada para su atenci&oacute;n y carecer de elementos suficientes para continuar con su tramite.</p>
+
+<p style="text-align:justify">Por lo que se le otorga un plazo de 5 d&iacute;as contados a partir de la fecha  <span th:text="${fechaSuspension}"></span> , para que subsane las omisiones abajo mencionadas y pueda continuar con su tr&aacute;mite. Lo anterior con fundamento en el Art. 73 fracci&oacute;nes I al IX y al Art. 103 de la Ley del Registro P&uacute;blico del Estado de Hidalgo, debiendo ingresar antes de que venza el plazo, a la ventanilla de ERPP lo requerido en la boleta de suspensi&oacute;n anexa a este correo.</p>
+
+<p style="text-align:justify">ATENTAMENTE.</p>
+<p style="text-align:justify">Direcc&oacute;n General de Servicios Registrales.</p>
+
+    
+<footer>
+        <div th:replace="fragments/footer :: footer"></div>
+</footer>
+</body>
+</html>

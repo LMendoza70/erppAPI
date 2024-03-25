@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="612" pageHeight="792" whenNoDataType="NoDataSection" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty" uuid="888ae8d1-f103-489e-9498-a94fd150cc15">
+	<property name="ireport.zoom" value="1.331000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<subDataset name="Empty Dataset1" uuid="a9d8aedd-f30f-4b69-8e48-5631323ef46b"/>
+	<scriptlet name="formatFecha" class="net.sf.jasperreports.engine.JRDefaultScriptlet"/>
+	<parameter name="path" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Dev\\hermes\\erpp\\target\\www\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="entrada" class="java.lang.String"/>
+	<field name="noFolio" class="java.lang.String"/>
+	<field name="numeroFolioReal" class="java.lang.String"/>
+	<field name="auxiliar" class="java.lang.String"/>
+	<field name="subindice" class="java.lang.String"/>
+	<field name="anio" class="java.lang.String"/>
+	<field name="oficina" class="java.lang.String"/>
+	<title>
+		<band height="11" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="7" splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="505">
+			<staticText>
+				<reportElement x="3" y="233" width="565" height="31" uuid="44246ff6-b2d1-4890-802b-51d30bc03f0b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ EXPEDICIÓN DE IMPRESION DE FOLIOS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="340" width="187" height="18" uuid="40073edc-a744-48a8-bf21-83902c1df248">
+					<printWhenExpression><![CDATA[new Boolean($F{subindice}!=null  && !$F{subindice}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anio}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="383" y="367" width="187" height="18" isRemoveLineWhenBlank="true" uuid="c68acad7-0a12-46b7-b54c-d1bc00660ada">
+					<printWhenExpression><![CDATA[new Boolean($F{subindice}!=null  && !$F{subindice}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subindice}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="301" y="368" width="78" height="18" isRemoveLineWhenBlank="true" uuid="d3a6d521-e188-49d1-a921-63a4c3fdba02">
+					<printWhenExpression><![CDATA[new Boolean($F{subindice}!=null  && !$F{subindice}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Subindice:]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="0" y="65" width="60" height="60" uuid="ec14400b-6ca5-40ba-91d6-9ccafdcd1ec3"/>
+				<imageExpression><![CDATA[$P{path} + "/logo-inf.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="510" y="65" width="60" height="60" uuid="6740f7a9-9893-4a5c-ad5c-bd75359f8dae"/>
+				<imageExpression><![CDATA[$P{path} + "/Escudo_Hidalgo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="301" y="320" width="78" height="18" uuid="6d2131f2-a44c-4121-afa6-4a1c9f403ff6">
+					<printWhenExpression><![CDATA[new Boolean($F{entrada}!=null  && !$F{entrada}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Entrada:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="381" y="321" width="187" height="18" uuid="502c3172-02e1-409e-8de2-77d4b45f54f8">
+					<printWhenExpression><![CDATA[new Boolean($F{entrada}!=null  && !$F{entrada}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{entrada}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="68" width="450" height="50" uuid="4da28735-4efd-4515-8d7f-640aea977065"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INSTITUTO DE LA FUNCION REGISTRAL DEL ESTADO DE HIDALGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="392" width="78" height="18" uuid="1170af90-d7ea-47c6-9d42-a537aa419c0f">
+					<printWhenExpression><![CDATA[new Boolean($F{noFolio}!=null  && !$F{noFolio}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Folio:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="378" y="391" width="190" height="19" uuid="28de9418-9580-4765-b692-73cb948c0dde">
+					<printWhenExpression><![CDATA[new Boolean($F{noFolio}!=null  && !$F{noFolio}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noFolio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="419" width="78" height="40" uuid="e09441fe-4108-443f-9164-5f74be878f28">
+					<printWhenExpression><![CDATA[new Boolean($F{numeroFolioReal}!=null  && !$F{numeroFolioReal}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Numero Folio Real:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="420" width="190" height="20" uuid="23d36fdb-a224-4a74-8165-3f5f558d0a21">
+					<printWhenExpression><![CDATA[new Boolean($F{numeroFolioReal}!=null  && !$F{numeroFolioReal}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroFolioReal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="460" width="78" height="20" uuid="93a1b8ee-0311-4e73-ba76-0dadbd52c4b5">
+					<printWhenExpression><![CDATA[new Boolean($F{auxiliar}!=null  && !$F{auxiliar}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Auxiliar:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="383" y="459" width="187" height="18" uuid="a8929e31-8182-4e3f-beb0-78b515a5fd6e">
+					<printWhenExpression><![CDATA[new Boolean($F{auxiliar}!=null  && !$F{auxiliar}.isEmpty())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{auxiliar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="264" width="150" height="20" uuid="498c0fa4-d072-4721-8a06-94607a26a45a"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>OFICINA: </b>"+$F{oficina}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30"/>
+	</pageFooter>
+</jasperReport>

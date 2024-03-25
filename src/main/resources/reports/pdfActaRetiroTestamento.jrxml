@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="612" pageHeight="1008" whenNoDataType="NoDataSection" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="888ae8d1-f103-489e-9498-a94fd150cc15">
+	<property name="ireport.zoom" value="1.331000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<subDataset name="Empty Dataset1" uuid="a9d8aedd-f30f-4b69-8e48-5631323ef46b"/>
+	<scriptlet name="formatFecha" class="net.sf.jasperreports.engine.JRDefaultScriptlet"/>
+	<parameter name="path" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Dev\\hermes\\erpp\\target\\www\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="rutaReportes" class="java.lang.String"/>
+	<parameter name="imgPath" class="java.lang.String"/>
+	<field name="horaNumero" class="java.lang.String"/>
+	<field name="horaLetra" class="java.lang.String"/>
+	<field name="dia" class="java.lang.String"/>
+	<field name="mesLetra" class="java.lang.String"/>
+	<field name="nombreDirector" class="java.lang.String"/>
+	<field name="ciudadano" class="java.lang.String"/>
+	<field name="folioCredencial" class="java.lang.String"/>
+	<field name="diaDeposito" class="java.lang.String"/>
+	<field name="mesLetraDeposito" class="java.lang.String"/>
+	<field name="numeroActa" class="java.lang.Long"/>
+	<field name="libro" class="java.lang.Long"/>
+	<field name="registradorAsignado" class="java.lang.String"/>
+	<variable name="fechaFormateada" class="java.lang.String"/>
+	<background>
+		<band height="820" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<image scaleImage="Clip">
+				<reportElement x="-17" y="-1" width="587" height="820" uuid="bc3fdb96-dfbe-44c8-9f8f-5dc320e7429e"/>
+				<imageExpression><![CDATA[$P{path} + "/background.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="136" y="30" width="435" height="20" uuid="61db9c34-b445-414e-a397-b96f7942791d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORMATO DE ACTA DE RETIRO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="820">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="135" y="12" width="432" height="20" uuid="a3559d5c-1b68-481c-ad60-7d9c3f0b7d47"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[En la ciudad de Guadalajara, Jalisco., Siendo las ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="34" width="42" height="20" uuid="afdd29ef-5c15-417a-b41b-19bd71ebcf28"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[del día ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="217" y="34" width="19" height="20" uuid="cb6c2b06-e237-43e6-8a87-6225562f69ee"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="327" y="34" width="102" height="20" uuid="ed91ef27-2b18-41bc-8004-8f6e33e5c0f5"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[del año en curso ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="34" width="111" height="20" uuid="f2d58fb6-a370-4b45-93c7-21fe9153daba"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[ante mí, Licenciado ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="56" width="240" height="20" uuid="327843d1-bd9f-4cf2-ad2b-8a1345573018"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[, Director General del Registro Público de la]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="78" width="224" height="20" uuid="3f9b280b-1edb-4b12-bb9d-247414618aa7"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Propiedad y de Comercio, compareció la]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="353" y="78" width="18" height="20" uuid="e7129188-f335-415c-a337-561684027588"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="100" width="434" height="20" uuid="83f3d219-6b25-47f9-bac3-8ec447fd80ed"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[, quien se identificó con su credencial del Instituto Federal Electoral  con Folio de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="122" width="44" height="20" uuid="20f02e7c-ef11-493e-be17-4447af445ebd"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Elector]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="349" y="122" width="218" height="20" uuid="e78b81a9-f923-4f4e-bc56-e47438bf15f7"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[, manifestándome el testador que es su ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="144" width="434" height="20" uuid="0984e2e3-09d6-42da-a83f-5608756a790a"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[deseo retirar el Testamento Ológrafo depositado por el mismo en esta Oficina,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="166" width="64" height="20" uuid="b3f1ed6d-c492-47b4-ab25-b6fb91f49418"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[con fecha ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="166" width="19" height="20" uuid="010424b9-db4a-4d18-98d7-da6939781fd5"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="166" width="102" height="20" uuid="5e9fc542-ece0-4754-a27b-c3000fe0e4ac"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[del año en curso,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="166" width="138" height="20" uuid="58ffbb61-b8c3-4e8f-955b-d3285b801de0"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[según consta en el]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="188" width="34" height="20" uuid="6a598f27-cc25-4b83-a8c4-7449e44ac339"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Acta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="213" y="188" width="54" height="20" uuid="b8a84b30-39d1-4c3a-ada2-d00ba4460ab8"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[del Libro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="317" y="188" width="130" height="20" uuid="b1083ed3-24ec-4f75-9617-296823ea862b"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[de la Sección Auxiliar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="449" y="188" width="118" height="20" uuid="a0c5b607-f184-4694-a974-2f424acb5e99"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[del Registro Público ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="210" width="434" height="102" uuid="e43c432d-c1fa-455c-81e0-77a5c7ef998d"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[de la Propiedad, por lo que de conformidad con los artículos 2880 y 2881 Del Código Civil vigente en el Estado de Jalisco, y una vez cerciorándonos de la identidad del testador, con el documento que nos presenta, comparando su firma y huellas digitales de esté, se procedió a entregar el sobre original del Testamento Ológrafo de la]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="312" width="434" height="80" uuid="3e225265-bae6-43dd-8cc7-b8f7dc7d568e"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[, el cual se encuentra perfectamente cerrado y protegido con una cinta adhesiva, y no presentando ninguna alteración o violación al mismo, y estando de acuerdo con lo anterior el propio testador, se cierra la presente ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="427" y="352" width="140" height="20" uuid="d6ebc36d-8385-4535-989a-855fcfd0a5fe"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Acta que bajo el número ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="371" width="92" height="20" uuid="b179b1fc-4580-4e37-ac9b-fe8b82e0b293"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[agrego al Libro ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="307" y="372" width="130" height="20" uuid="b5967b2a-620b-43f7-bc86-bcbf66dbb950"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[de la sección Auxiliar,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="437" y="372" width="130" height="20" uuid="e187e656-a95a-4dc6-9e89-61c223bf8627"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[, del Registro Público ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="392" width="434" height="50" uuid="cf14c5ad-f74d-4fd2-a2e4-3836f5f4827c"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[de la Propiedad y de Comercio, firmando de conformidad al calce, los que en ella participaron.  Doy fe.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="15" width="80" height="16" uuid="73e1369d-34de-4f30-9846-5bf82cdd7828"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaNumero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="15" width="90" height="16" uuid="adad6e99-892c-4934-9e8e-f593be41e837"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaLetra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="176" y="34" width="41" height="20" uuid="e6d3d42f-0575-48f6-a631-ffc844865838"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="236" y="34" width="91" height="20" uuid="ccfc4ca6-edd7-4e9d-9061-0a7b3c89367d"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mesLetra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="56" width="192" height="20" uuid="5f8533cb-b9b8-4c8e-871d-f11b60150875"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreDirector}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="79" width="197" height="19" uuid="54c02882-fe97-4e54-a37a-289235c63aac"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ciudadano}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="176" y="122" width="173" height="20" uuid="76420844-2b9b-4168-9733-7fc6106c0324"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{folioCredencial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="165" width="40" height="21" uuid="d740dcdd-ff9b-4270-b44c-5c4f4a8ef11a"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{diaDeposito}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="166" width="79" height="20" uuid="78490199-5266-40ae-82fd-7cd97c4ad669"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mesLetraDeposito}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="188" width="46" height="20" uuid="747a4c88-a82d-44b0-b4da-54bd8c27b7e7"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroActa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="267" y="188" width="50" height="20" uuid="73e49266-2bc9-4992-a510-0a455912682e"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="297" y="289" width="270" height="20" uuid="58760c45-dd81-43c3-b870-8cd0d0ad9c8b"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ciudadano}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="279" y="289" width="18" height="20" uuid="fbf96acb-38da-4bf2-bb12-9edc21b5b253"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="135" y="371" width="40" height="20" uuid="b4e94028-7479-466c-b0ca-d798043a6fdf"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroActa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="267" y="372" width="40" height="19" uuid="6cba7c45-f47a-47c3-a328-3141c24aa751"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libro}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="136" y="740" width="434" height="19" forecolor="#9C9898" uuid="b7ae1160-4685-494b-8b27-f631aaf3e49e"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Reviso y Elaboro:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="136" y="762" width="435" height="30" uuid="40242201-8635-473d-a87b-03deadbd0195"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registradorAsignado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

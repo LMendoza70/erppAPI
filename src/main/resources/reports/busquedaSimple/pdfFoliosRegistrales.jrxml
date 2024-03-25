@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pdfFoliosRegistrales" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" isTitleNewPage="true" uuid="92904c41-19a2-479e-b186-8233a3e4a702">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="folio" class="java.lang.String"/>
+	<field name="seccion" class="java.lang.String"/>
+	<field name="oficina" class="java.lang.String"/>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-18" y="4" width="497" height="20" uuid="eb5b437d-8d7a-4534-b814-7b4167ad9a46"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="43" y="4" width="327" height="20" uuid="7f938c76-eb6e-4dca-90a6-c8e564f1f4e9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Antecedente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="-16" y="4" width="56" height="20" uuid="078a54cd-7891-4dfa-86d9-11f28c4509f5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Folio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="-16" y="1" width="56" height="10" uuid="7fc144bc-8cd1-4ef7-852f-a24ab57b13a8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{folio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="1" width="436" height="10" uuid="e789a601-1f22-42b6-968b-1f3bc7524441"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{seccion}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-18" y="44" width="497" height="1" uuid="a6fadae4-f968-492e-99bb-a8f2d6dad72f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="43" y="11" width="436" height="33" uuid="fd072a0b-1af1-4c03-aee9-5bf7e029382f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{oficina}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

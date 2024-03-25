@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="612" pageHeight="1008" whenNoDataType="NoDataSection" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="888ae8d1-f103-489e-9498-a94fd150cc15">
+	<property name="ireport.zoom" value="1.331000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<subDataset name="Empty Dataset1" uuid="a9d8aedd-f30f-4b69-8e48-5631323ef46b"/>
+	<scriptlet name="formatFecha" class="net.sf.jasperreports.engine.JRDefaultScriptlet"/>
+	<parameter name="path" class="java.lang.String"/>
+	<parameter name="rutaReportes" class="java.lang.String"/>
+	<parameter name="imgPath" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="solicitante" class="java.lang.String"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="numPrelacion" class="java.lang.String"/>
+	<field name="fechaRecepcion" class="java.lang.String"/>
+	<field name="fechaCertificado" class="java.lang.String"/>
+	<field name="fechaPlanoCartografico" class="java.lang.String"/>
+	<field name="nombreDirector" class="java.lang.String"/>
+	<field name="municipio" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="superficie" class="java.lang.String"/>
+	<field name="alNorte" class="java.lang.String"/>
+	<field name="alSur" class="java.lang.String"/>
+	<field name="alOriente" class="java.lang.String"/>
+	<field name="alPoniente" class="java.lang.String"/>
+	<field name="favorDe" class="java.lang.String"/>
+	<field name="propietarios" class="java.lang.String"/>
+	<field name="numSolicitud" class="java.lang.String"/>
+	<field name="numLibro" class="java.lang.String"/>
+	<field name="ciudad" class="java.lang.String"/>
+	<field name="horasNumero" class="java.lang.String"/>
+	<field name="horaLetra" class="java.lang.String"/>
+	<field name="dia" class="java.lang.String"/>
+	<field name="mesLetra" class="java.lang.String"/>
+	<field name="anio" class="java.lang.String"/>
+	<field name="numRecibo" class="java.lang.String"/>
+	<field name="montoNumero" class="java.lang.String"/>
+	<field name="montoLetra" class="java.lang.String"/>
+	<field name="quienBusco" class="java.lang.String"/>
+	<field name="abogadoAsignado" class="java.lang.String"/>
+	<field name="coordinadorAcargo" class="java.lang.String"/>
+	<field name="cuentaCatastral" class="java.lang.String"/>
+	<field name="oficina" class="java.lang.String"/>
+	<variable name="fechaFormateada" class="java.lang.String"/>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="69">
+			<staticText>
+				<reportElement x="60" y="21" width="448" height="16" uuid="e02f86cb-a1dc-4706-975b-d492408ba3fc"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INSTITUTO DE LA FUNCION REGISTRAL]]></text>
+			</staticText>
+			<image>
+				<reportElement x="510" y="0" width="60" height="60" uuid="a1f8f468-7ed9-41cb-8188-19351ad8e3ed"/>
+				<imageExpression><![CDATA[$P{path} + "/Escudo_Hidalgo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="60" y="0" width="455" height="20" uuid="ffa91cd0-7dea-462b-945b-9014077e2f5c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CERTIFICADO DE  NO INSCRIPCIÓN]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="0" y="0" width="60" height="60" uuid="86d55ac1-eff2-482b-b920-8914d4a29468"/>
+				<imageExpression><![CDATA[$P{path} + "/logo-inf.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="62" y="39" width="447" height="19" uuid="5e2ee09b-6d9d-4c63-90f1-c7dd43aaf676"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["OFICINA REGISTRAL DE "+$F{oficina}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="141" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="60" y="8" width="448" height="133" uuid="aac5805e-b9a6-4905-af2d-072ad9e1762b"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Con fundamento en los artículos 2, 5, fracción IX, 23, fracción II, inciso a), 24, de la Ley del Registro Público de la Propiedad del Estado de Jalisco, así como los diversos 3, fracción I, 5, fracción I, 11, fracción VI, 37 del Reglamento de la Ley del Registro Público de la Propiedad del Estado de Jalisco, una vez satisfechos los requisitos del artículo 40 del último ordenamiento legal citado, el suscrito "+$F{nombreDirector} +" de DIRECTOR DEL ÁREA DE CERTIFICACIONES Y GRAVÁMENES DEL REGISTRO PUBLICO DE LA PROPIEDAD Y DE COMERCIO, hago constar y certifico que:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement stretchType="ContainerHeight" x="60" y="4" width="451" height="30" uuid="4ca579a9-609f-4a37-9acc-42bd5f623f32"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["A solicitud por escrito presentada ante ésta Institución Registral, por " + $F{solicitante} +
+" de fecha " +$F{fecha} +
+" correspondiéndole la entrada " + $F{numPrelacion}+
+" recibida en esta Dependencia el " + $F{fechaRecepcion} + 
+" del año en curso teniendo a la vista el Certificado Catastral con Historia, de la cuenta "  + $F{cuentaCatastral} +
+" de fecha " + $F{fechaCertificado} + 
+", y el plano cartográfico certificado, de fecha  " + $F{fechaPlanoCartografico} + 
+", ambos firmado por el " + $F{nombreDirector} + 
+", Director de Catastro Municipal de " +$F{municipio} +
+", se realizó la búsqueda en el Sistema de Información de ésta Dependencia a fin de verificar si obra o no constancia de registro del inmueble que se describe a continuación:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="54">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="61" y="7" width="451" height="30" uuid="92b01c60-7b0c-438d-8a87-3be34fd5a792"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="440">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="60" y="-1" width="450" height="30" uuid="884d56af-063b-4706-9645-a791d1317a27"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[En relación a lo cual ésta autoridad NO ENCONTRÓ REGISTRO DE LA PROPIEDAD EN MENCION a favor de:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="49" width="449" height="30" uuid="2828f189-bd94-4e71-bfa0-9a5ed2daee9e"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[quienes figuran como propietarios en la cuenta catastral ya referida, ni de los anteriores propietarios:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="97" width="449" height="30" uuid="5b8ff787-42d2-4816-bedf-998067d2c485"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[que del mismo se desprenden, ni de persona alguna, ello del periodo comprendido del año 1936 a la fecha.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="133" width="449" height="116" uuid="1e07311f-99a3-421f-9ce6-1c58730ca60a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Es de resaltar que esta institución cuenta con registros de índices, tarjetas kárdex y folios registrales para búsqueda de documentos y antecedentes, por cuanto hace a los años 1883 a 1979, de 1986 a 1988, 2001 a la fecha. Por lo que  habiéndose realizado la búsqueda en la totalidad de los registros de índices, tarjetas kárdex y folios registrales para búsqueda de documentos y antecedentes con que cuenta ésta Autoridad, NO se localizaron los datos de registro tal como se señala en párrafos que antecede.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="260" width="445" height="74" uuid="8fad9840-766c-4ea8-b68a-32270376a53f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Destacando que la búsqueda de datos se realizó en el sistema de información de ésta Institución, tomando como punto de partida la información proporcionada por el solicitante, quien será responsable del mal uso que pudiera darse al presente documento en caso de que dicha información sea imprecisa y/o incorrecta.]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="60" y="29" width="447" height="20" uuid="00546b70-c06d-4111-8306-0cd3f76aad98"/>
+				<textFieldExpression><![CDATA[$F{favorDe}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="60" y="79" width="449" height="18" uuid="e7437cc8-6f80-4efa-9362-9915ae89ad5d"/>
+				<textFieldExpression><![CDATA[$F{propietarios}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="64" y="355" width="440" height="77" uuid="c76f63b7-6373-4a56-a2ea-87ef28bde66d"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["La solicitud en comento quedo archivada bajo el número  " +$F{numSolicitud} +"  del libro " +$F{numLibro}+ "  de Solicitudes y Certificado de Inscripción y No Inscripción de la  Oficina del Registro Público de la Propiedad y Comercio de Guadalajara. "  +
+" El presente se expide en la ciudad de "  +$F{ciudad}  + " a las  " + $F{horasNumero}  +" del  "+ $F{dia}  +"  de " +$F{mesLetra}+ "  del  "+ $F{anio} +"\n"+
+"Los derechos para la expedición del presente certificado fueron cubiertos con el (los) recibo(s):  "+$F{numRecibo} + "   con un monto total  de  " + $F{montoNumero}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="261">
+			<staticText>
+				<reportElement x="64" y="102" width="433" height="50" uuid="97477fc8-fa66-4b40-8a08-b6c72e66e2e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[
+DIRECTOR DEL ÁREA DE CERTIFICACIONES y GRAVÁMENES DEL REGISTRO PUBLICO DE LA PROPIEDAD Y DE COMERCIO
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="192" width="113" height="16" uuid="d77e934c-682e-448b-95ba-7a5d9f2032c3"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Búsqueda realizada por:   ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="208" width="111" height="16" uuid="fcf0f316-c000-4c5c-9c22-2e8c44ab9533"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Elaboró:   ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="224" width="111" height="16" uuid="31bf6177-d2e7-4bb4-8db9-a8037b6ea3e0"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Vo, Bo: ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="167" y="192" width="337" height="16" uuid="e5e45d69-d813-4629-819f-8f5e9e63c6f8"/>
+				<textFieldExpression><![CDATA[$F{quienBusco}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="167" y="208" width="337" height="16" uuid="8e4b8c77-fe20-45c9-a725-01a1d7396eb6"/>
+				<textFieldExpression><![CDATA[$F{abogadoAsignado}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="167" y="224" width="337" height="18" uuid="cd5eec82-e5a3-4f81-8c22-db0d84bf1ddd"/>
+				<textFieldExpression><![CDATA[$F{coordinadorAcargo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="60" y="22" width="433" height="30" uuid="ea0800c1-88fb-4cac-acaf-9271a3e733ce"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreDirector}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

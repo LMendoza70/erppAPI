@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+    <img src="../static/img/escudo.png" data-th-src="|cid:escudo|" />
+    <div style="background-color: #E8E9EA; min-height: 40px; color:#589994; text-align: center"><h1>Instituto de la Funci&oacute;n Registral del Estado de Hidalgo</h1></div>
+
+    <h1>Estimado: <span th:text="${nombre}"></span></h1>
+	<p>En atención a su solicitud con número <span th:text="${consecutivo}"></span> le enviamos el resultado a su petición</p>	
+    <br/><br/><br/>
+    <p>
+    <img src="../static/img/logo-inf.png" data-th-src="|cid:logo-inf|" />
+    </p>        
+</body>
+</html>

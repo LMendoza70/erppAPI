@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pdfDatosLibros" pageWidth="595" pageHeight="84" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" uuid="7460ab07-7068-4575-a2af-c413477e7b07">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="libro" class="java.lang.String"/>
+	<field name="tipoLibro" class="java.lang.String"/>
+	<field name="seccion" class="java.lang.String"/>
+	<field name="oficinaLibro" class="java.lang.String"/>
+	<field name="documento" class="java.lang.String"/>
+	<field name="tipoDoc" class="java.lang.String"/>
+	<field name="vol" class="java.lang.String"/>
+	<field name="anio" class="java.lang.String"/>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-16" y="0" width="355" height="20" uuid="2cd38019-cf98-4afe-b7dd-609e459a7220"/>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="-15" y="0" width="40" height="20" uuid="f5daf3c9-e8b4-40f2-9526-1c452f2ed3eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Libro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="34" y="0" width="52" height="20" uuid="8d30f76a-8900-4755-bcb0-ceb9c3fefc1e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sección]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="168" y="0" width="57" height="20" uuid="2efab289-4f6b-4490-9131-ecd01f599941"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="88" y="0" width="80" height="20" uuid="605b6b63-1448-4423-9919-834ae696ca03"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Oficina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="229" y="1" width="53" height="18" uuid="1a0ce24d-d1a7-4f10-a04e-5a9949efbd2a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Volumen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="283" y="1" width="36" height="18" uuid="b150cd7f-c16f-466f-8b69-8bee87c6d597"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Año]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="-15" y="0" width="44" height="15" uuid="08363811-3b59-4869-805e-b74e1f4bf4eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{libro}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="88" y="0" width="80" height="14" uuid="0865b788-13ec-4d41-bb27-27b6a8afc854"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{oficinaLibro}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="168" y="1" width="57" height="14" uuid="f7757e29-8067-4bb4-af49-4e9902514d99"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{documento}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="33" y="0" width="53" height="14" uuid="84b0d363-052b-4925-813c-f48d715f652f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{seccion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="229" y="0" width="54" height="15" uuid="0930d961-b035-4418-9fad-3ab6243e7d38">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ff347921-e004-4c2f-8ac1-93d16a12f051"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{vol}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="282" y="1" width="36" height="14" uuid="25fe4894-ddfe-4cbd-b752-46ad467c6bfd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4cdca72a-3692-4f5f-af6d-dcc4beeca3f1"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{anio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

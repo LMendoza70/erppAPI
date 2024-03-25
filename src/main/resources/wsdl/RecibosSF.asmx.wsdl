@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://serviciossgg.jalisco.gob.mx/wsRecibosSF" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="https://serviciossgg.jalisco.gob.mx/wsRecibosSF" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicios de recibos SF</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://serviciossgg.jalisco.gob.mx/wsRecibosSF">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneDatosCobro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEstadoCuenta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneDatosCobroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneDatosCobroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneDatosGral">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEstadoCuenta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obtieneDatosGralResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obtieneDatosGralResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneDatosCobroSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneDatosCobro" />
+  </wsdl:message>
+  <wsdl:message name="obtieneDatosCobroSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneDatosCobroResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtieneDatosGralSoapIn">
+    <wsdl:part name="parameters" element="tns:obtieneDatosGral" />
+  </wsdl:message>
+  <wsdl:message name="obtieneDatosGralSoapOut">
+    <wsdl:part name="parameters" element="tns:obtieneDatosGralResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RecibosSFSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDatosCobro">
+      <wsdl:input message="tns:obtieneDatosCobroSoapIn" />
+      <wsdl:output message="tns:obtieneDatosCobroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDatosGral">
+      <wsdl:input message="tns:obtieneDatosGralSoapIn" />
+      <wsdl:output message="tns:obtieneDatosGralSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RecibosSFSoap" type="tns:RecibosSFSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="https://serviciossgg.jalisco.gob.mx/wsRecibosSF/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDatosCobro">
+      <soap:operation soapAction="https://serviciossgg.jalisco.gob.mx/wsRecibosSF/obtieneDatosCobro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDatosGral">
+      <soap:operation soapAction="https://serviciossgg.jalisco.gob.mx/wsRecibosSF/obtieneDatosGral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RecibosSFSoap12" type="tns:RecibosSFSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="https://serviciossgg.jalisco.gob.mx/wsRecibosSF/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDatosCobro">
+      <soap12:operation soapAction="https://serviciossgg.jalisco.gob.mx/wsRecibosSF/obtieneDatosCobro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtieneDatosGral">
+      <soap12:operation soapAction="https://serviciossgg.jalisco.gob.mx/wsRecibosSF/obtieneDatosGral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RecibosSF">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicios de recibos SF</wsdl:documentation>
+    <wsdl:port name="RecibosSFSoap" binding="tns:RecibosSFSoap">
+      <soap:address location="http://serviciossgg.jalisco.gob.mx/wsRecibosSF/RecibosSF.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RecibosSFSoap12" binding="tns:RecibosSFSoap12">
+      <soap12:address location="http://serviciossgg.jalisco.gob.mx/wsRecibosSF/RecibosSF.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

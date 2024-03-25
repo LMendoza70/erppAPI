@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="boletaAntecedentes" pageWidth="612" pageHeight="792" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" isSummaryNewPage="true" whenResourceMissingType="Error" uuid="b888fc23-8f38-41eb-9418-ef14686002f3">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="libro" class="java.lang.String"/>
+	<field name="seccion" class="java.lang.String"/>
+	<field name="oficina" class="java.lang.String"/>
+	<field name="documento" class="java.lang.String"/>
+	<field name="tomo" class="java.lang.String"/>
+	<field name="volumen" class="java.lang.String"/>
+	<field name="anio" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="-20" y="0" width="40" height="15" uuid="2ba5d6a4-063a-4e8c-8691-7f0be7195ce6"/>
+				<textFieldExpression><![CDATA["LIBRO "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-20" y="15" width="590" height="15" uuid="0a5b0384-dc2f-4e00-9c75-626fd772a6c2"/>
+				<textFieldExpression><![CDATA["SECCIÓN  " + $F{seccion} + "    OFICINA " + $F{oficina} +"    INSCRIPCIÓN " + $F{documento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="0" width="40" height="15" uuid="8bdd7cc1-da66-418d-a71f-f869ffe755ae"/>
+				<textFieldExpression><![CDATA[$F{libro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="0" width="100" height="15" uuid="35c56c37-2e35-488a-b583-8c38e2f514e7"/>
+				<textFieldExpression><![CDATA[$F{volumen}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="75" y="0" width="61" height="15" uuid="466c14a1-06ad-475c-9391-af7063cbb5a1"/>
+				<text><![CDATA[VOLUMEN:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="271" y="0" width="78" height="15" uuid="e6dab275-0e92-4a7c-bcf2-e80d7ac11395"/>
+				<textFieldExpression><![CDATA[$F{tomo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="238" y="0" width="32" height="14" uuid="61b8b73a-d203-45d8-bc12-69c67e8f93d0"/>
+				<text><![CDATA[TOMO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="379" y="0" width="70" height="14" uuid="ba4462ed-7993-4dd6-928c-d8d27e186c8f"/>
+				<textFieldExpression><![CDATA[$F{anio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="350" y="0" width="28" height="14" uuid="07402b24-311f-49b7-81e0-7f9c90afc0af"/>
+				<text><![CDATA[AÑO]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://service.segurisign.seguridata/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service.segurisign.seguridata/">
+
+
+<xs:element name="sSignDocument" type="tns:sSignDocument" />
+
+<xs:element name="getCryptographicData4Sequence">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="sequenceRequest" type="xs:string" minOccurs="0" />
+<xs:element name="typeRequest" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="getCryptographicData4SequenceResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="cryptographicData4SequenceResponse" type="tns:sSignEvidence" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:complexType name="sSignEvidence">
+<xs:sequence>
+<xs:element name="data" type="xs:base64Binary" minOccurs="0" />
+<xs:element name="sequence" type="xs:string" minOccurs="0" />
+<xs:element name="evidenceType" type="xs:string" minOccurs="0" />
+<xs:element name="base64" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:element name="multiSignedMessage_Verify">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0" />
+<xs:element name="info" type="tns:sSignDocument" minOccurs="0" />
+<xs:element name="infoType" type="tns:dataType" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:complexType name="sSignDocument">
+<xs:sequence>
+<xs:element name="data" type="xs:base64Binary" minOccurs="0" />
+<xs:element name="fileName" type="xs:string" />
+<xs:element name="base64" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:element name="multiSignedMessage_VerifyResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="multiSignedMessage_Update">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="signedMessageRequest" type="tns:sSignDocument" minOccurs="0" />
+<xs:element name="ProcessIDRequest" type="xs:string" minOccurs="0" />
+<xs:element name="SerialNumberRequest" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="multiSignedMessage_UpdateResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="multiSignedMessage_UpdateResponse" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="getOriginalDocument">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="sequenceRequest" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="getOriginalDocumentResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="originalDocumentResponse" type="tns:sSignDocument" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="multiSignedMessage_insertExternalCMS">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="externalFolio" type="xs:string" minOccurs="0" />
+<xs:element name="cmsRequest" type="tns:sSignDocument" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="multiSignedMessage_insertExternalCMSResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="return" type="tns:multiSignedMessageOutEvidence" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:complexType name="multiSignedMessageOutEvidence">
+<xs:sequence>
+<xs:element name="cmsData" type="tns:cmsData" minOccurs="0" />
+<xs:element name="processID" type="xs:int" />
+<xs:element name="ssignEvidence" type="tns:sSignEvidence" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cmsData">
+<xs:sequence>
+<xs:element name="encoding" type="xs:base64Binary" minOccurs="0" />
+<xs:element name="hash" type="xs:string" minOccurs="0" />
+<xs:element name="rootAuthorities" type="tns:evidenceInfo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="otherCertificates" type="tns:evidenceInfo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="signerInfos" type="tns:signerInfo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="evidenceInfo">
+<xs:sequence>
+<xs:element name="encoding" type="xs:base64Binary" minOccurs="0" />
+<xs:element name="issuerHash" type="xs:string" minOccurs="0" />
+<xs:element name="subjectHash" type="xs:string" minOccurs="0" />
+<xs:element name="keyHash" type="xs:string" minOccurs="0" />
+<xs:element name="certHash" type="xs:string" minOccurs="0" />
+<xs:element name="serial" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="signerInfo">
+<xs:sequence>
+<xs:element name="ocsp" type="xs:base64Binary" minOccurs="0" />
+<xs:element name="pkcs1" type="xs:base64Binary" minOccurs="0" />
+<xs:element name="tsp" type="xs:base64Binary" minOccurs="0" />
+<xs:element name="aa" type="xs:base64Binary" minOccurs="0" />
+<xs:element name="issuerHash" type="xs:string" minOccurs="0" />
+<xs:element name="serial" type="xs:string" minOccurs="0" />
+<xs:element name="hashInAA" type="xs:string" minOccurs="0" />
+<xs:element name="hashInSignature" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:element name="multiSignedMessage_Status">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ProcessIDRequest" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="multiSignedMessage_StatusResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="multiSignedMessage_StatusResponse" type="xs:unsignedShort" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="multiSignedMessage_Init">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="MultiSignedMessageInRequest" type="tns:multiSignedMessageIn" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:complexType name="multiSignedMessageIn">
+<xs:sequence>
+<xs:element name="DataType" type="xs:unsignedShort" />
+<xs:element name="Data" type="xs:base64Binary" minOccurs="0" />
+<xs:element name="Flags" type="xs:byte" />
+<xs:element name="DataInfo" type="xs:string" minOccurs="0" />
+<xs:element name="HashAlgorithm" type="xs:string" minOccurs="0" />
+<xs:element name="signersNum" type="xs:short" />
+<xs:element name="pdfPassword" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:element name="multiSignedMessage_InitResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="multiSignedMessage_InitResponse" type="tns:multiSignedMessageOut" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:complexType name="multiSignedMessageOut">
+<xs:sequence>
+<xs:element name="hash" type="xs:string" minOccurs="0" />
+<xs:element name="processID" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:element name="multiSignedMessage_GetHash">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0" />
+<xs:element name="signerCertificate" type="tns:sSignEvidence" minOccurs="0" />
+<xs:element name="signatureReason" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="multiSignedMessage_GetHashResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="multiSignedMessage_addContentToCMS">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="contentRequest" type="tns:sSignDocument" minOccurs="0" />
+<xs:element name="cmsRequest" type="tns:sSignDocument" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="multiSignedMessage_addContentToCMSResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="return" type="tns:sSignDocument" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="multiSignedMessage_Final">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ProcessIDRequest" type="xs:string" minOccurs="0" />
+<xs:element name="ProcessActionRequest" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="multiSignedMessage_FinalResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="multiSignedMessage_FinalResponse" type="tns:sSignEvidence" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="authenticatePKCS7">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="signedMessageRequest" type="tns:sSignDocument" minOccurs="0" />
+<xs:element name="serialNumberRequest" type="xs:string" minOccurs="0" />
+<xs:element name="labelRequest" type="xs:string" minOccurs="0" />
+<xs:element name="externContentRequest" type="tns:sSignDocument" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="authenticatePKCS7Response">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="authenticatePKCS7Response" type="tns:sSignEvidence" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:simpleType name="dataType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="DATA" />
+<xs:enumeration value="FILE" />
+<xs:enumeration value="HASH" />
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>
